@@ -1,3 +1,40 @@
 .footer {
-  background: lightcoral;
+  border-top: 1px solid white;
+  padding: 40px 0;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &__logo {
+    @include interactive-opacity;
+    display: flex;
+    align-items: center;
+
+    img {
+      flex-shrink: 0;
+      filter: brightness(0) saturate(100%) invert(100%) sepia(96%) saturate(15%) hue-rotate(212deg) brightness(104%)
+        contrast(104%);
+    }
+
+    & > span {
+      @include font(20, 22);
+      font-weight: 700;
+      margin-left: 10px;
+    }
+  }
+
+  &__text {
+    text-align: center;
+  }
 }

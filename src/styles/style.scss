@@ -1,4 +1,5 @@
 @import "vendor/normalize";
+@import "vendor/swiper";
 
 @import "variables";
 @import "mixins";
@@ -6,8 +7,11 @@
 @import "global/fonts";
 @import "global/reboot";
 @import "global/utils";
-@import "global/animations.scss";
+@import "global/animations";
 @import "global/container";
+
+@import "global/typography";
+@import "global/toggler";
 
 @import "../blocks/**/*.scss";
 @import "../components/**/*.scss";

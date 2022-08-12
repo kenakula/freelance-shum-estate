@@ -1,4 +1,46 @@
+-
+  const links = [
+    {
+      url: '#',
+      name: 'О нас',
+      alias: 'about',
+    },
+    {
+      url: '#',
+      name: 'Недвижимость',
+      alias: 'estate',
+    },
+    {
+      url: '#',
+      name: 'Блог',
+      alias: 'blog',
+    },
+    {
+      url: '#',
+      name: 'Контакты',
+      alias: 'contacts',
+      type: 'button',
+    },
+  ];
+
 mixin footer()
 
   footer.footer&attributes(attributes)
-    .footer__inner.container footer
+    .footer__inner.container
+      .footer__col
+        if isMainPage
+          a.footer__logo(href="index.html")
+            +imgSvg({path: '', image: 'logo', width: 100, height: 28, altText: 'Логотип'})
+            span Estate
+        else
+          a.footer__logo(href="javascript:void(0)")
+            +imgSvg({path: '', image: 'logo', width: 100, height: 28, altText: 'Логотип'})
+            span Estate
+        .footer__text
+          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut totam laudantium tenetur praesentium, itaque illo.
+      .footer__col
+        ul.footer__list
+          each item in links
+            li
+              a(href=item.url) !{item.name}
+

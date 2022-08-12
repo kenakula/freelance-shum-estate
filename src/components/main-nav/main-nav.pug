@@ -3,15 +3,19 @@
 //-     {
 //-       url: string;
 //-       name: string;
+//-       alias: string;
+//-       type?: 'button';
 //-     }
-//-   ]
+//-   ],
+//-   currentPage: 'main' | 'about' | 'estate' | 'blog' | 'contacts'
 //- }
 
-mixin mainNav({links})
+mixin mainNav({links, currentPage})
 
   nav.main-nav#main-nav&attributes(attributes)
-    +toggler({label: 'Открыть меню', targetId: 'toggler', switchableClass: 'active'})
+    +toggler({label: 'Открыть меню', targetId: 'main-nav', switchableClass: 'active'})
     ul.main-nav__list
       each item in links
-        li.main-nav__item
+        - const isActive = currentPage === item.alias;
+        li.main-nav__item(class={'main-nav__item--active': isActive})
           a(href=item.url) !{item.name}

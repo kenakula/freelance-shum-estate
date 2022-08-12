@@ -1,6 +1,18 @@
 .container {
   width: 100%;
-  max-width: $desktop;
   margin: 0 auto;
   padding: 0 20px;
+  max-width: $container;
+
+  @include min-tablet {
+    padding: 0 40px;
+  }
+
+  @include min-laptop {
+    padding: 0 60px;
+  }
+
+  @include min-desktop {
+    padding: 0;
+  }
 }
