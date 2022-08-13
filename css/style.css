@@ -2183,6 +2183,9 @@ p:last-child, p:last-of-type {
   .container {
     padding: 0;
   }
+  .slider {
+    overflow: hidden;
+  }
   .promo__inner {
     padding: 120px 0;
   }
