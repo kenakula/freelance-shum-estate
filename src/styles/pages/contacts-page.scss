@@ -1,0 +1,100 @@
+.contacts-page {
+  $c: &;
+
+  &__title {
+    width: 100%;
+    text-align: center;
+
+    svg {
+      fill: $color-red;
+      width: 100%;
+      height: 100px;
+    }
+  }
+
+  &__body {
+    display: grid;
+    gap: 20px;
+    grid-template-areas:
+      "address"
+      "info"
+      "map";
+
+    @include min-tablet {
+      grid-template-columns: 1fr 1fr;
+      grid-template-areas:
+        "address info"
+        "map map";
+    }
+
+    @include min-laptop {
+      gap: 40px;
+    }
+  }
+
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 90%;
+    font-style: normal;
+    grid-area: address;
+
+    &-row {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-left: 50px;
+
+      svg {
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        flex-shrink: 0;
+        fill: $color-orange;
+      }
+
+      a {
+        @include min-tablet {
+          @include transition(color);
+
+          &:hover {
+            color: $color-orange;
+          }
+        }
+      }
+    }
+  }
+
+  &__info {
+    grid-area: info;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+    border-top: 3px solid $color-red;
+    border-bottom: 3px solid $color-red;
+    text-align: center;
+
+    @include min-tablet {
+      padding: 0 20px;
+      border: none;
+      border-left: 3px solid $color-red;
+    }
+  }
+
+  &__map {
+    grid-area: map;
+
+    iframe {
+      width: 100%;
+    }
+
+    @include min-tablet {
+      padding: 0;
+    }
+  }
+}

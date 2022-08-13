@@ -59,10 +59,12 @@
   &__contacts {
     max-width: 220px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 
     p {
       @include font(14, 18);
-      margin-bottom: 10px;
       font-style: normal;
     }
 

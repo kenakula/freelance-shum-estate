@@ -13,8 +13,11 @@ mixin footer()
               a(href=item.url) !{item.name}
       .footer__col
         address.footer__contacts
-          p г. Санкт-Петербург, ул. Улица Улица, д20, офис 250
+          p г. Санкт-Петербург, п. Мурино, ул. шоссе в Лаврики д. 34 к.1
           a(href="tel:+79999999999")
             +icon({name: 'icon-phone', width: 20, height: 20})
             span +7 (999) 999 99 99
+          a(href="mailto:shum-estate@mail.ru")
+            +icon({name: 'icon-mail', width: 20, height: 20})
+            span shum-estate@mail.ru
 
