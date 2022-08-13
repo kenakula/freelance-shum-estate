@@ -1566,6 +1566,9 @@ p:last-child, p:last-of-type {
 .popular {
   position: relative;
 }
+.popular .container {
+  position: relative;
+}
 .popular__bg {
   position: absolute;
   left: 0;
