@@ -1228,6 +1228,11 @@ svg:not(:root) {
   justify-content: center;
 }
 
+.page__top {
+  padding-top: 20px !important;
+  text-align: center;
+}
+
 .slider {
   position: relative;
   padding-bottom: 30px;
@@ -2073,6 +2078,35 @@ p:last-child, p:last-of-type {
   display: flex;
 }
 
+.about-page__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+.about-page__scull {
+  width: 70%;
+  max-width: 320px;
+}
+.about-page__scull img {
+  -webkit-filter: brightness(0) saturate(100%) invert(21%) sepia(97%) saturate(1737%) hue-rotate(356deg) brightness(93%) contrast(109%);
+          filter: brightness(0) saturate(100%) invert(21%) sepia(97%) saturate(1737%) hue-rotate(356deg) brightness(93%) contrast(109%);
+}
+.about-page__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.about-page__info h2 {
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+  margin-bottom: 30px;
+}
+.about-page__info a {
+  margin-top: 40px;
+}
+
 .contacts-page__title {
   width: 100%;
   text-align: center;
@@ -2160,6 +2194,9 @@ p:last-child, p:last-of-type {
   }
   .section__top {
     gap: 40px;
+  }
+  .page__top {
+    padding-top: 40px !important;
   }
   h2 {
     font-size: 2rem;
@@ -2254,6 +2291,12 @@ p:last-child, p:last-of-type {
   }
   .estate-card__link:hover {
     color: #fa9021;
+  }
+  .about-page__inner {
+    flex-direction: row;
+  }
+  .about-page__info {
+    padding: 0 20px;
   }
   .contacts-page__body {
     gap: 40px;
