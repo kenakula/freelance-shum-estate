@@ -1,0 +1,33 @@
+-
+  const testimonialsItems = [
+    {
+      author: 'Автор Авторович',
+      text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo id rerum deserunt iure libero enim laudantium perspiciatis fugit in debitis error reiciendis dolore facilis',
+    },
+    {
+      author: 'Анатолий Квартировчи',
+      text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo id rerum deserunt iure libero enim laudantium perspiciatis fugit in debitis ',
+    },
+    {
+      author: 'Гретта Торнамент',
+      text: 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illo id rerum deserunt iure libero enim laudantium perspiciatis fugit in debitis error',
+    },
+  ]
+
+mixin testimonials()
+  section.section.testimonials&attributes(attributes)
+    .testimonials__splat
+      +icon({name: 'splat-3', width: 320, height: 320})
+    .container
+      .testimonials__inner
+        .section__top
+          h2 Люди о нас
+        .section__body
+          .slider.testimonials__slider.swiper(data-slider, data-type="testimonials")
+            ul.swiper-wrapper.slider__wrapper
+              each item in testimonialsItems
+                li.swiper-slide.slider__slide
+                  .testimonials__card
+                    h3 !{item.author}
+                    p.text.text--muted !{item.text}
+            .swiper-scrollbar.slider__scrollbar.slider__scrollbar--orange

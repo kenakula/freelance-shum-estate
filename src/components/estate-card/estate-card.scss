@@ -1,0 +1,113 @@
+.estate-card {
+  $c: &;
+
+  &__image {
+    position: relative;
+    display: block;
+    margin-bottom: 20px;
+    aspect-ratio: 16/9;
+    border-radius: $border-radius1;
+    overflow: hidden;
+    box-shadow: $shadow1;
+
+    img {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    @include min-tablet {
+      @include interactive-opacity;
+    }
+  }
+
+  &__price {
+    @include font(18, 22);
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    height: 40px;
+    background-color: $color-blue;
+    border-top-left-radius: 15px;
+    font-weight: 700;
+    color: $color-white;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0 20px 20px;
+  }
+
+  &__title {
+    @include font(18, 24);
+    margin: 0;
+
+    a {
+      @include transition(color);
+    }
+
+    @include min-tablet {
+      a {
+        &:hover {
+          color: $color-orange;
+        }
+      }
+    }
+  }
+
+  &__address {
+    @include font(14, 18);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-style: normal;
+  }
+
+  &__street {
+    display: flex;
+    align-items: center;
+
+    svg {
+      flex-shrink: 0;
+      margin-right: 5px;
+      fill: $color-green;
+    }
+  }
+
+  &__metro {
+    display: flex;
+    align-items: center;
+
+    svg {
+      flex-shrink: 0;
+      margin-right: 5px;
+      fill: $color-red;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  &__link {
+    @include transition(color);
+    align-self: flex-end;
+    text-decoration: underline;
+
+    @include min-tablet {
+      &:hover {
+        color: $color-orange;
+      }
+    }
+  }
+}

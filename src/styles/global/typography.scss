@@ -1,4 +1,23 @@
-h1 {
+h1,
+h2 {
+  margin: 0 0 20px 0;
+  font-family: $font-title;
+
+  &:last-child,
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+h2 {
+  @include font(22, 32);
+
+  @include min-tablet {
+    @include font(32, 40);
+  }
+}
+
+p {
   margin: 0 0 20px 0;
 
   &:last-child,
@@ -7,12 +26,18 @@ h1 {
   }
 }
 
-p {
+.text {
   @include font(18, 22);
-  margin: 0 0 20px 0;
 
-  &:last-child,
-  &:last-of-type {
-    margin-bottom: 0;
+  &--white {
+    color: $color-white;
+  }
+
+  &--accent {
+    color: $color-orange;
+  }
+
+  &--muted {
+    color: $color-gray;
   }
 }

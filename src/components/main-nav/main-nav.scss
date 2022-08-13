@@ -16,10 +16,11 @@
     width: 100vw;
     height: 100vh;
     background-color: $color-black;
-    animation: fadein-from-none 0.3s ease-in-out forwards;
+    animation: fadein-from-none 0.2s ease-in-out forwards;
   }
 
   &__item {
+    position: relative;
     padding: 10px 0;
     margin-bottom: 20px;
 
@@ -30,38 +31,59 @@
     a {
       @include font(24, 28);
       position: relative;
+      font-family: $font-title;
+    }
 
-      &::before {
-        @include pseudo;
-        @include transition(transform);
-        position: absolute;
-        left: 0;
-        bottom: -10px;
-        height: 4px;
-        width: 100%;
-        background-color: $color-red;
-        border-radius: 0 10px 10px 0;
-        transform: scaleX(0);
-        transform-origin: left;
+    &--contact {
+      padding: 0;
+      margin-top: 10px;
+
+      a {
+        @include font(22, 24);
+        @include transition(background-color);
+        padding: 5px 20px;
+        border-radius: $border-radius1;
+        border: 2px solid $color-orange;
       }
 
       @include min-laptop {
-        &:hover {
-          &::before {
-            transform: scaleX(1.2);
+        margin-top: 0;
+
+        a {
+          &:hover {
+            background-color: $color-orange;
+
+            &::before {
+              display: none;
+            }
           }
         }
       }
     }
 
     &--active {
-      a {
-        pointer-events: none;
-
-        &::before {
-          transform: scaleX(1.2);
-        }
+      #{$c}__brush {
+        display: flex;
       }
+    }
+  }
+
+  &__brush {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: none;
+    width: 120%;
+    min-width: 180px;
+    transform: translate(-50%, -50%);
+
+    svg {
+      width: 100%;
+      fill: $color-orange;
+    }
+
+    @include min-laptop {
+      min-width: 140px;
     }
   }
 
@@ -77,20 +99,33 @@
 
     #{$c}__item {
       margin-bottom: 0;
-      margin-right: 40px;
+      margin-right: 60px;
 
       &:last-child {
         margin-right: 0;
       }
 
       a {
-        @include font(18, 22);
+        @include font(16, 20);
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+
+      &--contact {
+        a {
+          &:hover {
+            opacity: 1;
+          }
+        }
       }
     }
   }
 
   &.active {
     #{$c}__list {
+      z-index: $layer-nav;
       display: flex;
     }
   }

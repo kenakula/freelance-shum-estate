@@ -1,0 +1,46 @@
+.team {
+  $c: &;
+
+  overflow-x: hidden;
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    border: 1px solid rgba($color: $color-black, $alpha: 0.5);
+    border-radius: $border-radius1;
+
+    &-image {
+      position: relative;
+      margin: 0 auto;
+      aspect-ratio: 1/1;
+      width: 100%;
+      max-width: 200px;
+
+      img {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: center;
+
+      h3 {
+        margin: 0;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
+}

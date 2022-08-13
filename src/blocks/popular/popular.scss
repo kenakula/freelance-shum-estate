@@ -1,0 +1,34 @@
+.popular {
+  $c: &;
+
+  position: relative;
+
+  &__bg {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 95%;
+    background-image: url("../img/rock-2.svg");
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.05;
+    transform: translateY(-50%);
+  }
+
+  &__list {
+    @include list-reset;
+    position: relative;
+    z-index: $layer-default;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include min-tablet {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+}

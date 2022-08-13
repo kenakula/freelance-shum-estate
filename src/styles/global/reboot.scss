@@ -27,14 +27,19 @@ body {
   font-style: normal;
   font-weight: 400;
   font-family: $font-main;
-  color: $color-white;
-  background-color: $color-black;
+  color: $color-black;
+  background-color: $color-white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 main {
   flex-grow: 1;
+  padding-top: 82px;
+
+  @include min-laptop {
+    padding-top: 94px;
+  }
 }
 
 a {

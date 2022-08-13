@@ -1,0 +1,13 @@
+mixin popular()
+  section.section.popular
+    .popular__bg
+    .container
+      .popular__inner
+        .section__top
+          h2.popular__title Хитовые квартиры
+          a.button.button--outlined(href="estate.html") Все
+        .section__body
+          ul.popular__list
+            each item in estateItems
+              li.popular__item
+                +estate-card(item)

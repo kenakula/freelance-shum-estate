@@ -1,0 +1,42 @@
+.slider {
+  $c: &;
+
+  position: relative;
+  padding-bottom: 30px;
+
+  &__slide {
+    display: flex;
+    height: auto;
+    align-self: stretch;
+  }
+
+  &__scrollbar {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 10px;
+    border-radius: $border-radius1;
+
+    &--orange {
+      #{$c}__drag {
+        background-color: $color-orange;
+      }
+    }
+  }
+
+  &__drag {
+    left: 0;
+    top: 0;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    border-radius: $border-radius1;
+    background: $color-red;
+    cursor: pointer;
+  }
+
+  &__wrapper {
+    @include list-reset;
+  }
+}

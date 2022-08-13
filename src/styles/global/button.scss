@@ -1,0 +1,33 @@
+.button {
+  $c: &;
+
+  @include button-reset;
+  @include font(20, 24);
+  padding: 5px 10px;
+  border-radius: $border-radius1;
+  background-color: $color-orange;
+  border: 2px solid $color-transparent;
+  transition: all $default-transition-settings;
+
+  &--outlined {
+    background-color: $color-transparent;
+    border-color: $color-orange;
+  }
+
+  @include min-tablet {
+    &:hover {
+      background-color: $color-red;
+    }
+
+    &--outlined {
+      &:hover {
+        background-color: $color-orange;
+      }
+    }
+  }
+
+  @include min-laptop {
+    @include font(24, 30);
+    padding: 7px 20px;
+  }
+}

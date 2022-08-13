@@ -1,12 +1,37 @@
 // Default
 
 $color-black: #141414;
+$color-gray: #a9a9a9;
 $color-white: #ffffff;
 $color-ghost: #f7f7ff;
 $color-green: #3f826d;
 $color-red: #f34213;
 $color-yellow: #f8f272;
+$color-orange: #fa9021;
+$color-blue: #0070eb;
 $color-transparent: rgba(255, 255, 255, 0);
+
+$gradient1: linear-gradient(
+  90deg,
+  rgba(20, 20, 20, 0) 0%,
+  rgba(20, 20, 20, 0.6) 27%,
+  rgba(20, 20, 20, 0.8) 61%,
+  rgba(20, 20, 20, 0.9) 86%
+);
+
+$shadow1: 0 7px 10px
+  rgba(
+    $color: $color-black,
+    $alpha: 0.1,
+  );
+
+// filters
+//---------------------------------
+
+$filter-color-white: brightness(0) saturate(100%) invert(100%) sepia(96%) saturate(15%) hue-rotate(212deg)
+  brightness(104%) contrast(104%);
+$filter-color-gray: brightness(0) saturate(100%) invert(81%) sepia(0%) saturate(1581%) hue-rotate(156deg)
+  brightness(84%) contrast(90%);
 
 // Typography
 //---------------------------------
@@ -40,6 +65,12 @@ $retina-dppx: 1.5dppx;
 // Layers
 //---------------------------------
 
-$layer-nav: 100;
 $layer-toggler: 101;
+$layer-nav: 100;
+$layer-header: 20;
 $layer-default: 10;
+
+// Misc
+//---------------------------------
+
+$border-radius1: 6px;

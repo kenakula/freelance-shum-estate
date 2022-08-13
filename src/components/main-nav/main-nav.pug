@@ -17,5 +17,7 @@ mixin mainNav({links, currentPage})
     ul.main-nav__list
       each item in links
         - const isActive = currentPage === item.alias;
-        li.main-nav__item(class={'main-nav__item--active': isActive})
+        li.main-nav__item(class={'main-nav__item--active': isActive, 'main-nav__item--contact': item.type === 'button'})
           a(href=item.url) !{item.name}
+          span.main-nav__brush
+            +icon({name: 'brush-2', width: 180, height: 45})

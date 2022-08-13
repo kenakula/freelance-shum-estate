@@ -10,8 +10,11 @@
 @import "global/animations";
 @import "global/container";
 
+@import "global/section";
+@import "global/slider";
 @import "global/typography";
 @import "global/toggler";
+@import "global/button";
 
 @import "../blocks/**/*.scss";
 @import "../components/**/*.scss";

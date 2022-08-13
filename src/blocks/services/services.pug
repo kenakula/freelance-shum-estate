@@ -1,0 +1,18 @@
+mixin services()
+  section.section.services
+    .services__splat
+      +icon({name: 'splat-2', width: 320, height: 320})
+    .container
+      .services__inner
+        .section__top
+          h2.services__title Предлагаем
+        .section__body
+          ul.services__list
+            each item in servicesItems
+              li.services__item
+                .services__card
+                  .services__card-top
+                    +icon({name: 'rock-1', width: 100, height: 100})
+                  .services__card-body
+                    h3.services__card-title !{item.label}
+                    p.services__card-text !{item.text}

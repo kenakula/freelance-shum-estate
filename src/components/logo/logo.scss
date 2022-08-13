@@ -1,0 +1,25 @@
+.logo {
+  display: flex;
+  align-items: center;
+
+  img {
+    flex-shrink: 0;
+    filter: $filter-color-white;
+  }
+
+  & > span {
+    @include font(20, 22);
+    font-weight: 700;
+    margin-left: 10px;
+  }
+
+  &--gray {
+    img {
+      filter: $filter-color-gray;
+    }
+  }
+
+  @include min-laptop {
+    @include interactive-opacity;
+  }
+}

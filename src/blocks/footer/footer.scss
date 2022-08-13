@@ -1,12 +1,14 @@
 .footer {
-  border-top: 1px solid white;
-  padding: 40px 0;
+  padding: 30px 0;
+  background-color: $color-black;
+  color: $color-gray;
 
   &__inner {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    @include min-tablet {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
   }
 
   &__col {
@@ -14,27 +16,70 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-  }
+    padding: 10px 0;
+    border-bottom: 1px solid $color-white;
 
-  &__logo {
-    @include interactive-opacity;
-    display: flex;
-    align-items: center;
-
-    img {
-      flex-shrink: 0;
-      filter: brightness(0) saturate(100%) invert(100%) sepia(96%) saturate(15%) hue-rotate(212deg) brightness(104%)
-        contrast(104%);
-    }
-
-    & > span {
-      @include font(20, 22);
-      font-weight: 700;
-      margin-left: 10px;
+    @include min-tablet {
+      align-items: flex-start;
+      border-bottom: none;
     }
   }
 
   &__text {
     text-align: center;
+    max-width: 400px;
+
+    p {
+      @include font(14, 18);
+    }
+
+    @include min-tablet {
+      text-align: left;
+      padding-right: 40px;
+    }
+  }
+
+  &__list {
+    @include list-reset;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+
+    a {
+      @include font(14, 18);
+    }
+
+    @include min-tablet {
+      width: auto;
+      align-items: flex-start;
+    }
+  }
+
+  &__contacts {
+    max-width: 220px;
+    text-align: center;
+
+    p {
+      @include font(14, 18);
+      margin-bottom: 10px;
+      font-style: normal;
+    }
+
+    a {
+      @include font(14, 18);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+    }
+
+    @include min-tablet {
+      text-align: right;
+
+      a {
+        justify-content: flex-end;
+      }
+    }
   }
 }
