@@ -1490,10 +1490,28 @@ p:last-child, p:last-of-type {
   background-color: #fa9021;
   border: 2px solid rgba(255, 255, 255, 0);
   transition: all 0.2s ease;
+  color: #ffffff;
 }
 .button--outlined {
   background-color: rgba(255, 255, 255, 0);
   border-color: #fa9021;
+  color: #141414;
+}
+
+.contact__top {
+  margin-bottom: 20px;
+  text-align: center;
+}
+.contact__body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contact__info {
+  -ms-grid-row-align: center;
+      align-self: center;
+  text-align: center;
+  max-width: 70%;
 }
 
 .footer {
@@ -1928,6 +1946,44 @@ p:last-child, p:last-of-type {
   text-decoration: underline;
 }
 
+.form__form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.form__row {
+  display: flex;
+  width: 100%;
+  border: 2px solid #fa9021;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.form__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  background-color: #fa9021;
+  color: #ffffff;
+}
+.form__input {
+  flex-grow: 1;
+  display: flex;
+}
+.form__input input {
+  padding: 0 10px;
+  width: 100%;
+  border: none;
+  cursor: pointer;
+}
+.form__submit {
+  -ms-grid-row-align: center;
+      align-self: center;
+}
+.form--single-row .form__form {
+  flex-direction: row;
+}
+
 .logo {
   display: flex;
   align-items: center;
@@ -2030,9 +2086,9 @@ p:last-child, p:last-of-type {
   display: -ms-grid;
   display: grid;
   gap: 20px;
-      grid-template-areas: "address" "info" "map";
+      grid-template-areas: "address" "info" "contact" "map";
 }
-.contacts-page__contacts {
+.contacts-page__address {
   -ms-grid-row: 1;
   -ms-grid-column: 1;
   display: flex;
@@ -2042,14 +2098,14 @@ p:last-child, p:last-of-type {
   font-style: normal;
   grid-area: address;
 }
-.contacts-page__contacts-row {
+.contacts-page__address-row {
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 10px;
   padding-left: 50px;
 }
-.contacts-page__contacts-row svg {
+.contacts-page__address-row svg {
   position: absolute;
   left: 0;
   top: 50%;
@@ -2071,9 +2127,16 @@ p:last-child, p:last-of-type {
   border-bottom: 3px solid #f34213;
   text-align: center;
 }
-.contacts-page__map {
+.contacts-page__contact {
   -ms-grid-row: 5;
   -ms-grid-column: 1;
+  grid-area: contact;
+}
+.contacts-page__map {
+  -ms-grid-row: 7;
+  -ms-grid-column: 1;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
   grid-area: map;
 }
 .contacts-page__map iframe {
@@ -2107,6 +2170,20 @@ p:last-child, p:last-of-type {
   }
   .button--outlined:hover {
     background-color: #fa9021;
+    color: #ffffff;
+  }
+  .contact__body {
+    flex-direction: row;
+  }
+  .contact__info {
+    width: 50%;
+  }
+  .contact__info p {
+    margin: 0 auto;
+    max-width: 350px;
+  }
+  .contact__form {
+    width: 50%;
   }
   .footer__inner {
     display: flex;
@@ -2179,14 +2256,16 @@ p:last-child, p:last-of-type {
     color: #fa9021;
   }
   .contacts-page__body {
-    -ms-grid-columns: 1fr 1fr;
+    gap: 40px;
+    -ms-grid-columns: 1fr 40px 1fr;
     grid-template-columns: 1fr 1fr;
-        grid-template-areas: "address info" "map map";
+    -ms-grid-rows: auto 40px auto 40px auto;
+        grid-template-areas: "address info" "contact contact" "map map";
   }
-  .contacts-page__contacts-row a {
+  .contacts-page__address-row a {
     transition: color 0.2s ease;
   }
-  .contacts-page__contacts-row a:hover {
+  .contacts-page__address-row a:hover {
     color: #fa9021;
   }
   .contacts-page__info {
@@ -2197,18 +2276,23 @@ p:last-child, p:last-of-type {
   .contacts-page__map {
     padding: 0;
   }
-  .contacts-page__contacts {
+  .contacts-page__address {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
   }
   .contacts-page__info {
     -ms-grid-row: 1;
-    -ms-grid-column: 2;
+    -ms-grid-column: 3;
+  }
+  .contacts-page__contact {
+    -ms-grid-row: 3;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 3;
   }
   .contacts-page__map {
-    -ms-grid-row: 2;
+    -ms-grid-row: 5;
     -ms-grid-column: 1;
-    -ms-grid-column-span: 2;
+    -ms-grid-column-span: 3;
   }
 }
 @media (min-width: 1024px) {
@@ -2233,6 +2317,12 @@ p:last-child, p:last-of-type {
     right: 20%;
     width: 30vw;
     height: 38vw;
+  }
+  .form__form {
+    gap: 20px;
+  }
+  .form__icon {
+    width: 80px;
   }
   .logo {
     transition: opacity 0.2s ease;
@@ -2280,9 +2370,6 @@ p:last-child, p:last-of-type {
   }
   .main-nav .main-nav__item--contact a:hover {
     opacity: 1;
-  }
-  .contacts-page__body {
-    gap: 40px;
   }
 }
 @media (min-width: 1440px) {
