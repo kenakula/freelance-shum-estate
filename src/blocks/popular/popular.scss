@@ -3,6 +3,10 @@
 
   position: relative;
 
+  .container {
+    position: relative;
+  }
+
   &__bg {
     position: absolute;
     left: 0;
