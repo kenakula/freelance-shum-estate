@@ -8,10 +8,12 @@
   background-color: $color-orange;
   border: 2px solid $color-transparent;
   transition: all $default-transition-settings;
+  color: $color-white;
 
   &--outlined {
     background-color: $color-transparent;
     border-color: $color-orange;
+    color: $color-black;
   }
 
   @include min-tablet {
@@ -22,6 +24,7 @@
     &--outlined {
       &:hover {
         background-color: $color-orange;
+        color: $color-white;
       }
     }
   }

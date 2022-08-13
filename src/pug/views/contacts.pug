@@ -13,20 +13,22 @@ block main
             h1 Как нас найти?
             +icon({name: 'brush-3', width: 200, height: 40})
         .section__body.contacts-page__body
-          address.contacts-page__contacts
-            .contacts-page__contacts-row
+          address.contacts-page__address
+            .contacts-page__address-row
               +icon({name: 'icon-pin', width: 30, height: 30})
               p г. Санкт-Петербург, п. Мурино, ул. шоссе в Лаврики д. 34 к.1
-            .contacts-page__contacts-row
+            .contacts-page__address-row
               +icon({name: 'icon-phone', width: 30, height: 30})
               a(href="tel:+79999999999") +7 (999) 999 99 99
               a(href="tel:+79999999999") +7 (999) 999 99 99
-            .contacts-page__contacts-row
+            .contacts-page__address-row
               +icon({name: 'icon-mail', width: 30, height: 30})
               a(href="mailto:shum-estate@mail.ru") shum-estate@mail.ru
               a(href="mailto:shum-estate@mail.ru") shum-estate@mail.ru
           .contacts-page__info
             p Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, explicabo!
             p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Similique praesentium doloribus dolorem?
+          .contacts-page__contact
+            +contact(true)
           .contacts-page__map
-            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ac7cb6e682ccde86e470fa93df1f41b7a8dae1e0b96bf8fc532d684c1af185893&amp;source=constructor" width="320" height="320" frameborder="0"></iframe>
+            <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3Ac7cb6e682ccde86e470fa93df1f41b7a8dae1e0b96bf8fc532d684c1af185893&amp;source=constructor" width="320" height="400" frameborder="0"></iframe>

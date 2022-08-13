@@ -1,0 +1,24 @@
+mixin contact(nosection)
+
+  if nosection
+    .contact&attributes(attributes)
+      .contact__inner
+        .contact__top
+          h2 Заявка на просмотр
+        .contact__body
+          .contact__info
+            p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, beatae.
+          .contact__form
+            +form().form--single-row
+  else
+    section#contact.section.contact&attributes(attributes)
+      .container
+        .contact__inner
+          .section__top
+            h2 Заявка на просмотр
+          .section__body.contact__body
+            .contact__info
+              p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, beatae.
+            .contact__form
+              +form().form--single-row
+

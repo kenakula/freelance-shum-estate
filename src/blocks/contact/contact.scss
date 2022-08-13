@@ -1,0 +1,39 @@
+.contact {
+  $c: &;
+
+  &__top {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    @include min-tablet {
+      flex-direction: row;
+    }
+  }
+
+  &__info {
+    align-self: center;
+    text-align: center;
+    max-width: 70%;
+
+    @include min-tablet {
+      width: 50%;
+
+      p {
+        margin: 0 auto;
+        max-width: 350px;
+      }
+    }
+  }
+
+  &__form {
+    @include min-tablet {
+      width: 50%;
+    }
+  }
+}

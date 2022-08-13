@@ -18,21 +18,20 @@
     grid-template-areas:
       "address"
       "info"
+      "contact"
       "map";
 
     @include min-tablet {
+      gap: 40px;
       grid-template-columns: 1fr 1fr;
       grid-template-areas:
         "address info"
+        "contact contact"
         "map map";
-    }
-
-    @include min-laptop {
-      gap: 40px;
     }
   }
 
-  &__contacts {
+  &__address {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -86,7 +85,12 @@
     }
   }
 
+  &__contact {
+    grid-area: contact;
+  }
+
   &__map {
+    @include full-width-vw;
     grid-area: map;
 
     iframe {

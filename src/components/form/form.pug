@@ -1,0 +1,11 @@
+mixin form()
+
+  .form&attributes(attributes)
+    form.form__form(action="#" method="POST")
+      .form__row
+        .form__icon
+          +icon({name: 'icon-mail', width: 30, height: 30})
+        .form__input
+          label.visually-hidden#mail Ваша почта
+          input(type="email" required)
+      button.button.form__submit Подать
