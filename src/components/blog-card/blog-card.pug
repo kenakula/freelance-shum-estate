@@ -1,0 +1,20 @@
+mixin blogCard({id, title, desc, date, author, pinned, image, male})
+  .blog-card&attributes(attributes)
+    a.blog-card__image(href="blog-single.html")
+      img(src=image, alt=title)
+    .blog-card__body
+      a(href="blog-single.html")
+        h3 !{title}
+      p !{desc}
+    footer.blog-card__footer
+      .blog-card__info
+        .blog-card__author
+          if male === true
+            +icon({name: 'male-user', width: 20, height: 20})
+          else
+            +icon({name: 'female-user', width: 20, height: 20})
+          span !{author}
+        .blog-card__date
+          +icon({name: 'icon-calendar', width: 20, height: 20})
+          small !{date}
+      a.blog-card__link.button.button--outlined.button--small(href="blog-single.html") Читать

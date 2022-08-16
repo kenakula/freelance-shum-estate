@@ -3,6 +3,10 @@
 
   overflow-x: hidden;
 
+  &__title {
+    margin: 0;
+  }
+
   &__card {
     display: flex;
     flex-direction: column;

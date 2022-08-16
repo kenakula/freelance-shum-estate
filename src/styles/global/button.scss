@@ -16,6 +16,11 @@
     color: $color-black;
   }
 
+  &--small {
+    @include font(18, 22);
+    padding: 3px 7px;
+  }
+
   @include min-tablet {
     &:hover {
       background-color: $color-red;
@@ -32,5 +37,10 @@
   @include min-laptop {
     @include font(24, 30);
     padding: 7px 20px;
+
+    &--small {
+      @include font(20, 24);
+      padding: 5px 10px;
+    }
   }
 }

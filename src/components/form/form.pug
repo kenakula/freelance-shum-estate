@@ -6,6 +6,6 @@ mixin form()
         .form__icon
           +icon({name: 'icon-mail', width: 30, height: 30})
         .form__input
-          label.visually-hidden#mail Ваша почта
-          input(type="email" required)
+          label.visually-hidden(for="mail") Ваша почта
+          input(type="email" name="mail" id="mail" required)
       button.button.form__submit Подать

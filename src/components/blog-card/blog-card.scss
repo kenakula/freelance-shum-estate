@@ -1,4 +1,4 @@
-.estate-card {
+.blog-card {
   $c: &;
 
   &__image {
@@ -24,31 +24,15 @@
     }
   }
 
-  &__price {
-    @include font(18, 22);
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    height: 40px;
-    background-color: $color-blue;
-    border-top-left-radius: 15px;
-    font-weight: 700;
-    color: $color-white;
-  }
-
   &__body {
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 0 20px 20px;
-  }
 
-  &__title {
-    @include font(18, 24);
-    margin: 0;
+    h3 {
+      margin: 0;
+    }
 
     a {
       @include transition(color);
@@ -63,43 +47,27 @@
     }
   }
 
-  &__address {
-    @include font(14, 18);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    font-style: normal;
-  }
-
-  &__street {
-    display: flex;
-    align-items: center;
-
-    svg {
-      flex-shrink: 0;
-      margin-right: 5px;
-      fill: $color-green;
-    }
-  }
-
-  &__metro {
-    display: flex;
-    align-items: center;
-
-    svg {
-      flex-shrink: 0;
-      margin-right: 5px;
-      fill: $color-red;
-    }
-  }
-
   &__footer {
     display: flex;
+    align-items: center;
     justify-content: space-between;
     gap: 10px;
+    padding: 0 20px 20px;
   }
 
-  &__link {
-    align-self: flex-end;
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  &__author,
+  &__date {
+    display: flex;
+    align-items: center;
+
+    svg {
+      margin-right: 5px;
+    }
   }
 }

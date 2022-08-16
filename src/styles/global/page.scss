@@ -2,11 +2,22 @@
   $c: &;
 
   &__top {
-    padding-top: 20px !important;
+    padding-top: 20px;
     text-align: center;
 
     @include min-tablet {
-      padding-top: 40px !important;
+      padding-top: 40px;
+    }
+  }
+
+  &__title {
+    width: 100%;
+    text-align: center;
+
+    svg {
+      fill: $color-red;
+      width: 100%;
+      height: 100px;
     }
   }
 }

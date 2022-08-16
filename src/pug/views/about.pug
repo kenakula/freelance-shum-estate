@@ -6,8 +6,10 @@ block variables
 
 block main
   .page__top.container
-    h1 О нас
-  section.section.about-page
+    .page__title
+      h1 О нас
+        +icon({name: 'brush-3', width: 200, height: 40})
+  section.about-page
     .container
       .about-page__inner
         .about-page__scull

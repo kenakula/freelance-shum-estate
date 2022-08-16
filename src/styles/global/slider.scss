@@ -40,7 +40,7 @@
     @include list-reset;
   }
 
-  @include min-desktop {
+  @include min-laptop {
     overflow: hidden;
   }
 }

@@ -1,0 +1,66 @@
+extends ../base/layout
+
+block variables
+  - const mainPage = false;
+  - const currentPage = 'single';
+  -
+    const breadcrumbs = [
+      {
+        link: '/',
+        label: 'Главная',
+        current: false,
+      },
+      {
+        link: 'estate.html',
+        label: 'Квартиры',
+        current: false,
+      },
+      {
+        link: 'estate-single.html',
+        label: 'Заголовок поста',
+        current: true,
+      },
+    ];
+  -
+    const data = {
+      id: 1,
+      title: 'Уютная квартирка в центре',
+      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui consequuntur aperiam blanditiis ducimus dicta neque numquam consectetur ipsam illum quos?',
+      address: 'ул. Комсомольская д. 10',
+      metro: 'Ломоносовская',
+      price: '33000/мес.',
+      image: 'https://via.placeholder.com/640x400',
+      images: ['https://via.placeholder.com/640x400', 'https://via.placeholder.com/640x400', 'https://via.placeholder.com/640x400'],
+      content: '<h1>Et amet cupiditate et harum ullam et provident rerum. </h1><p>Lorem ipsum dolor sit amet. Et cumque inventore <a href="https://www.loremipzum.com" target="_blank">Enim ut tempora quibusdam  voluptatem aliquid sed fuga rerum</a> hic Quis quisquam At enim vitae. Et soluta sapiente aut omnis undein perferendis cum facilis necessitatibus non expedita odit. </p><h2>Aut illum earum aut exercitationem dolorem aut culpa facilis. </h2><p>Ut galisum blanditiis quo modi incidunt rem maiores accusamus sed libero exercitationem rem iure nemo qui nihil velit sed velit assumenda. Ut quos exercitationem <strong>Et praesentium et autem neque</strong>. </p><dl><dt><dfn>Non necessitatibus perferendis. </dfn></dt><dd>Vel corrupti earum et voluptatem commodi qui voluptas quia. </dd><dt><dfn>Est illum ipsum. </dfn></dt><dd>Est quisquam quibusdam sed facilis quis. </dd><dt><dfn>Aut eveniet voluptate. </dfn></dt><dd>Sit asperiores aliquam quo corporis fuga qui voluptatem beatae et  perspiciatis! </dd><dt><dfn>Aut expedita consequuntur. </dfn></dt><dd>Ea tempore internos et adipisci asperiores. </dd></dl><blockquote cite="https://www.loremipzum.com">Est obcaecati excepturi sit dolor minima et nihil sint et nisi unde At eaque repellendus eos quam blanditiis. </blockquote><h3>Et atque omnis a voluptates sunt. </h3><p>Sit earum molestias in aperiam dolor At veniam consequatur et sunt quia ex quibusdam architecto  nulla facilis. Hic sint molestiae <em>Ut maxime</em> est magnam voluptas. Non culpa atque ab voluptates vero vel fugit laudantium et fugit voluptates. </p><ol><li>Ad quos voluptas ut illum quia. </li><li>Cum esse fugiat ut vero soluta qui voluptatem ipsa est odit magnam. </li><li>Et suscipit voluptas At incidunt nemo. </li><li>Id ipsum numquam eum dolores exercitationem qui similique quod? </li></ol><ul><li>Ut dolor cumque aut architecto voluptas aut veniam fugiat. </li><li>Est iste iure eum molestiae cumque sed dignissimos quae non voluptatum earum. </li></ul>'
+    };
+
+block main
+  section.section.single-page
+    .container
+      .single-page__inner
+        .single-page__guitar
+          img(src="img/guitar-2.svg", alt="")
+        .single-page__breadcrumbs
+          +breadcrumbs(breadcrumbs)
+        .single-page__left
+          .single-page__sticky
+            .single-page__image
+              img(src=data.image, alt=data.title)
+            //- .slider.single-page__slider.swiper(data-slider, data-type="single")
+            //-   ul.swiper-wrapper.slider__wrapper
+            //-     each item in data.images
+            //-       li.swiper-slide.slider__slide
+            //-         .single-page__image
+            //-           img(src=item, alt=data.title)
+            address.single-page__address
+              .single-page__street
+                +icon({name: 'icon-pin', width: 20, height: 20})
+                span !{data.address}
+              .single-page__metro
+                +icon({name: 'icon-metro', width: 20, height: 20})
+                span !{data.metro}
+        .single-page__content
+          h1.single-page__title !{data.title}
+          p.single-page__description !{data.desc}
+          .single-page__content-box !{data.content}
+  +contact()

@@ -1,16 +1,7 @@
 .contacts-page {
   $c: &;
 
-  &__title {
-    width: 100%;
-    text-align: center;
-
-    svg {
-      fill: $color-red;
-      width: 100%;
-      height: 100px;
-    }
-  }
+  overflow-x: hidden;
 
   &__body {
     display: grid;
@@ -95,6 +86,7 @@
 
     iframe {
       width: 100%;
+      display: block;
     }
 
     @include min-tablet {

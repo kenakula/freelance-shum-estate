@@ -1,0 +1,9 @@
+mixin breadcrumbs(links)
+
+  .breadcrumbs&attributes(attributes)
+    ul.breadcrumbs__list
+      each item in links
+        li.breadcrumbs__item(class={'breadcrumbs__item--current': item.current})
+          a.breadcrumbs__link(href=item.link) !{item.label}
+          if item.current === false
+            +icon({name: 'icon-slash', width: 20, height: 20})

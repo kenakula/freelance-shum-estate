@@ -19,6 +19,10 @@
     }
   }
 
+  &__title {
+    margin: 0;
+  }
+
   &__list {
     @include list-reset;
     position: relative;
@@ -31,6 +35,20 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
+    }
+  }
+
+  &__item {
+    &:first-child {
+      #{$c}__card-top {
+        color: $color-red;
+      }
+    }
+
+    &:last-child {
+      #{$c}__card-top {
+        color: $color-green;
+      }
     }
   }
 

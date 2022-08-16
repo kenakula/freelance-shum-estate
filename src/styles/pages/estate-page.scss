@@ -1,0 +1,26 @@
+.estate-page {
+  $c: &;
+
+  padding-bottom: 40px;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__list {
+    @include list-reset;
+    display: grid;
+    gap: 20px;
+
+    @include min-tablet {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include min-laptop {
+      grid-template-columns: 1fr 1fr 1fr;
+      row-gap: 40px;
+    }
+  }
+}

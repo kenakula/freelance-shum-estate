@@ -5,13 +5,14 @@ block variables
   - const currentPage = 'contacts';
 
 block main
-  section.section.contacts-page
+  .page__top.container
+    .page__title
+      h1 Как нас найти?
+        +icon({name: 'brush-3', width: 200, height: 40})
+
+  section.contacts-page
     .container
       .contacts-page__inner
-        .section__top.section__top--centered
-          .contacts-page__title
-            h1 Как нас найти?
-            +icon({name: 'brush-3', width: 200, height: 40})
         .section__body.contacts-page__body
           address.contacts-page__address
             .contacts-page__address-row

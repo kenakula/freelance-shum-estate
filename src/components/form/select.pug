@@ -1,0 +1,7 @@
+mixin select({options, placeholder, id, name})
+
+  select(data-select id=id name=name)
+    if placeholder
+      option(value="") !{placeholder}
+    each item in options
+      option(value=item.value) !{item.label}

@@ -5,3 +5,19 @@ block variables
   - const currentPage = 'estate';
 
 block main
+  .page__top.container
+    .page__title
+      h1 Квартиры
+        +icon({name: 'brush-3', width: 200, height: 40})
+  section.estate-page
+    .container
+      .estate-page__inner
+        .estate-page__filter
+          form.filter#filter(action="#" method="POST")
+            +select(estateRegionFilter)
+            +select(estateMetroFilter)
+        .estate-page__catalog
+          ul.estate-page__list
+            each item in estateItems
+              li.estate-page__item
+                +estate-card(item)

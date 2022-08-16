@@ -1,13 +1,13 @@
 mixin estate-card({image, id, label, address, metro, price})
 
   .estate-card&attributes(attributes)
-    a.estate-card__image(href="#")
+    a.estate-card__image(href="estate-single.html")
       img(src=image, alt=label)
       .estate-card__price
         span !{price}
     .estate-card__body
       h3.estate-card__title
-        a(href="#") !{label}
+        a(href="estate-single.html") !{label}
       address.estate-card__address
         .estate-card__street
           +icon({name: 'icon-pin', width: 20, height: 20})
@@ -15,7 +15,7 @@ mixin estate-card({image, id, label, address, metro, price})
         .estate-card__metro
           +icon({name: 'icon-metro', width: 20, height: 20})
           span !{metro}
-      a.estate-card__link(href="#") Подробнее
+      a.button.button--outlined.button--small.estate-card__link(href="estate-single.html") Подробнее
 
 
 

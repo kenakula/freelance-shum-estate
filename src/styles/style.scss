@@ -1,5 +1,6 @@
 @import "vendor/normalize";
 @import "vendor/swiper";
+@import "vendor/choices";
 
 @import "variables";
 @import "mixins";
@@ -16,6 +17,7 @@
 @import "global/typography";
 @import "global/toggler";
 @import "global/button";
+@import "global/filter";
 
 @import "../blocks/**/*.scss";
 @import "../components/**/*.scss";

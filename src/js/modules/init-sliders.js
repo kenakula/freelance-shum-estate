@@ -1,6 +1,18 @@
-import Swiper from 'swiper';
+import Swiper, { Navigation, Scrollbar } from 'swiper';
 import { debounce } from '../utils/debounce';
 import { TEAM_SLIDER_OPTIONS, TESTIMONIALS_SLIDER_OPTIONS } from '../../blocks';
+
+const SINGLE_PAGE_SLIDER_OPTIONS = {
+  modules: [Navigation, Scrollbar],
+  scrollbar: {
+    el: '.swiper-scrollbar',
+    draggable: true,
+    dragClass: 'slider__drag',
+  },
+  observer: true,
+  observeParents: true,
+  slidesPerView: 1,
+};
 
 export const initSliders = () => {
   const sliders = document.querySelectorAll('[data-slider]');
@@ -27,6 +39,7 @@ export const initSliders = () => {
         options = { ...options, ...TESTIMONIALS_SLIDER_OPTIONS };
         break;
       default:
+        options = { ...options, ...SINGLE_PAGE_SLIDER_OPTIONS };
         break;
     }
 

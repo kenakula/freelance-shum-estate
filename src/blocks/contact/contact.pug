@@ -4,7 +4,7 @@ mixin contact(nosection)
     .contact&attributes(attributes)
       .contact__inner
         .contact__top
-          h2 Заявка на просмотр
+          h2.contact__title Заявка на просмотр
         .contact__body
           .contact__info
             p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, beatae.
@@ -14,8 +14,8 @@ mixin contact(nosection)
     section#contact.section.contact&attributes(attributes)
       .container
         .contact__inner
-          .section__top
-            h2 Заявка на просмотр
+          .section__top.section__top--centered
+            h2.contact__title Заявка на просмотр
           .section__body.contact__body
             .contact__info
               p Lorem, ipsum dolor sit amet consectetur adipisicing elit. Suscipit, beatae.

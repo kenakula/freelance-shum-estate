@@ -23,10 +23,13 @@
     }
 
     @include min-laptop {
-      right: 20%;
       width: 30vw;
       height: 38vw;
     }
+  }
+
+  &__title {
+    margin: 0;
   }
 
   &__info {

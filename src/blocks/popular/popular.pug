@@ -9,5 +9,6 @@ mixin popular()
         .section__body
           ul.popular__list
             each item in estateItems
-              li.popular__item
-                +estate-card(item)
+              if item.hit === true
+                li.popular__item
+                  +estate-card(item)

@@ -1,6 +1,8 @@
 .about-page {
   $c: &;
 
+  padding-top: 0;
+
   &__inner {
     display: flex;
     flex-direction: column;
@@ -30,7 +32,11 @@
 
     h2 {
       @include font(20, 26);
-      margin-bottom: 30px;
+      margin: 0 0 30px 0;
+    }
+
+    p {
+      margin: 0 0 20px 0;
     }
 
     a {

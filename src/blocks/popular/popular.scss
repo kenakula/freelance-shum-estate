@@ -21,6 +21,10 @@
     transform: translateY(-50%);
   }
 
+  &__title {
+    margin: 0;
+  }
+
   &__list {
     @include list-reset;
     position: relative;

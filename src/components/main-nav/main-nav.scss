@@ -16,7 +16,7 @@
     width: 100vw;
     height: 100vh;
     background-color: $color-black;
-    animation: fadein-from-none 0.2s ease-in-out forwards;
+    animation: fadein-from-none 0.2s ease-in-out;
   }
 
   &__item {
@@ -32,6 +32,14 @@
       @include font(24, 28);
       position: relative;
       font-family: $font-title;
+
+      &::before {
+        @include pseudo;
+        left: -7px;
+        top: -7px;
+        right: -7px;
+        bottom: -7px;
+      }
     }
 
     &--contact {

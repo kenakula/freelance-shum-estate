@@ -1,12 +1,6 @@
 h1,
 h2 {
-  margin: 0 0 20px 0;
   font-family: $font-title;
-
-  &:last-child,
-  &:last-of-type {
-    margin-bottom: 0;
-  }
 }
 
 h2 {
@@ -14,15 +8,6 @@ h2 {
 
   @include min-tablet {
     @include font(32, 40);
-  }
-}
-
-p {
-  margin: 0 0 20px 0;
-
-  &:last-child,
-  &:last-of-type {
-    margin-bottom: 0;
   }
 }
 

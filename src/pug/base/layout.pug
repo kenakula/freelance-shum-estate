@@ -4,18 +4,18 @@ include ../data/nav-links.data.pug
 include ../data/estate.data.pug
 include ../data/services.data.pug
 include ../data/team.data.pug
+include ../data/blog.data.pug
 
 block data
   - const title = 'SHUMcorp Estate';
   - const pageDescription = 'Page description';
 
 block variables
-  - const pageLang = 'ru';
   - const title = 'Document';
   - const pageDescription = 'Page description';
 
 doctype html
-html(class="no-js" lang=pageLang)
+html(class="no-js" lang="ru")
   head
     title !{title}
     meta(charset="utf-8")

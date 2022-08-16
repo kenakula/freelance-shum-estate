@@ -20,8 +20,8 @@ mixin testimonials()
       +icon({name: 'splat-3', width: 320, height: 320})
     .container
       .testimonials__inner
-        .section__top
-          h2 Люди о нас
+        .section__top.section__top--centered
+          h2.testimonials__title Люди о нас
         .section__body
           .slider.testimonials__slider.swiper(data-slider, data-type="testimonials")
             ul.swiper-wrapper.slider__wrapper

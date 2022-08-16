@@ -19,6 +19,10 @@
     }
   }
 
+  &__title {
+    margin: 0;
+  }
+
   &__card {
     display: flex;
     flex-direction: column;

@@ -78,9 +78,8 @@
 
     h1 {
       @include font(46, 52);
-      margin-bottom: 20px;
+      margin: 0 0 20px 0;
       font-family: $font-title;
-      letter-spacing: -2px;
     }
 
     p {
