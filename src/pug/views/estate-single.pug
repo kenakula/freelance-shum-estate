@@ -35,32 +35,19 @@ block variables
     };
 
 block main
-  section.section.single-page
+  section.section.estate-single
     .container
-      .single-page__inner
-        .single-page__guitar
-          img(src="img/guitar-2.svg", alt="")
-        .single-page__breadcrumbs
+      .estate-single__inner
+        .estate-single__guitar
+          img(src="img/guitar-1.svg", alt="")
+        .estate-single__breadcrumbs
           +breadcrumbs(breadcrumbs)
-        .single-page__left
-          .single-page__sticky
-            .single-page__image
-              img(src=data.image, alt=data.title)
-            //- .slider.single-page__slider.swiper(data-slider, data-type="single")
-            //-   ul.swiper-wrapper.slider__wrapper
-            //-     each item in data.images
-            //-       li.swiper-slide.slider__slide
-            //-         .single-page__image
-            //-           img(src=item, alt=data.title)
-            address.single-page__address
-              .single-page__street
-                +icon({name: 'icon-pin', width: 20, height: 20})
-                span !{data.address}
-              .single-page__metro
-                +icon({name: 'icon-metro', width: 20, height: 20})
-                span !{data.metro}
-        .single-page__content
-          h1.single-page__title !{data.title}
-          p.single-page__description !{data.desc}
-          .single-page__content-box !{data.content}
+        .estate-single__sidebar
+          .estate-single__info
+        .estate-single__content
+          .estate-single__top
+            h1.estate-single__title !{data.title}
+            p.estate-single__description !{data.desc}
+          .estate-single__editor !{data.content}
+
   +contact()

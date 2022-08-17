@@ -1,0 +1,90 @@
+@use "sass:math";
+
+.blog-single {
+  $c: &;
+
+  &__inner {
+    position: relative;
+    display: grid;
+    grid-template-areas: "breadcrumbs" "sidebar" "content";
+
+    @include min-laptop {
+      grid-template-areas: "breadcrumbs breadcrumbs" "sidebar content";
+      grid-template-columns: 1fr 2fr;
+      gap: 20px;
+    }
+  }
+
+  &__guitar {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 100%;
+    opacity: 0.05;
+  }
+
+  &__breadcrumbs {
+    grid-area: breadcrumbs;
+    margin-bottom: 40px;
+  }
+
+  &__sidebar {
+    position: relative;
+    grid-area: sidebar;
+    margin-bottom: 20px;
+  }
+
+  &__info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    @include min-laptop {
+      position: sticky;
+      left: 0;
+      top: 110px;
+    }
+  }
+
+  &__author,
+  &__date {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__content {
+    grid-area: content;
+  }
+
+  &__top {
+    margin-bottom: 40px;
+
+    h1 {
+      margin: 0 0 30px 0;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &__image {
+    position: relative;
+    margin-bottom: 40px;
+    width: 100%;
+    padding-bottom: percentage(math.div(188, 335));
+
+    img {
+      position: absolute;
+      display: block;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

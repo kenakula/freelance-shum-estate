@@ -31,7 +31,7 @@ block variables
       author: 'Alexey Rakov',
       male: true,
       pinned: true,
-      content: '<h1>Hic nostrum dolorem et consequatur animi et molestiae quas. </h1><p>Lorem ipsum dolor sit amet. At galisum galisum eum libero deserunt est inventore recusandae 33 sequi possimus ex quaerat dolor. In natus facere a quia dolorem <em>At rerum At suscipit quod in asperiores dolor qui asperiores unde</em>. Eos reprehenderit iste et dolorem nihil <strong>Qui maxime</strong>. </p><h2>Qui nobis sunt ea animi sunt eos dolorum dolor. </h2><p>Et atque quod est neque laborum id voluptate dolorem aut repellat fugiat ut dignissimos illum eos consequuntur dolorem et tempora facere! Et fugit quas <strong>Et sapiente est aliquam veritatis ut magni vitae</strong> et animi nihil cum eligendi optio. In tempore expedita vel quia doloresaut repellat non voluptatem sunt qui quia laudantium. </p><ol><li>Ea voluptas sunt est harum cumque? </li><li>Vel dicta nihil in totam officiis  commodi fuga. </li><li>Ex itaque nihil rem ullam distinctio ea dicta rerum. </li><li>A iure aspernatur eos voluptas porro aut iste sapiente cum accusantium accusamus? </li><li>Et numquam nobis At quibusdam adipisci et  modi in perferendis labore. </li><li>Ut amet dignissimos qui blanditiis enim quo voluptas mollitia. </li></ol><ul><li>Aut dolores magni id consequatur repellat aut corrupti molestiae est recusandae omnis. </li><li>Ea veniam praesentium qui excepturi reprehenderit. </li><li>Et rerum voluptas et commodi voluptatum. </li><li>Rem deleniti provident id sequi doloribus. </li><li>Quo cumque quos non impedit temporibus ab odio consequuntur vel autem saepe. </li><li>Qui eligendi velit et suscipit mollitia ad accusamus numquam. </li></ul><h3>Et dolores voluptas sed recusandae animi eos Quis delectus. </h3><p>In velit corporis <a href="https://www.loremipzum.com" target="_blank">Sit ad dicta unde nam quae dolor</a> ut molestiae incidunt. Qui blanditiis iste <em>At quam qui delectus perferendis qui nisi omnis sit incidunt maiores</em>. Qui necessitatibus odit <strong>Est obcaecati et voluptas eius vel sint eligendi</strong> est nihil laborum et quia inventore. Ut enim corrupti sit autem molestiae et asperiores quibusdam quo sint asperiores est doloremque sunt aut blanditiis modi. </p><dl><dt><dfn>Qui sint ratione id quae voluptates? </dfn></dt><dd>Ut omnis error ut eius ipsa ea sunt minima qui voluptatem excepturi. </dd><dt><dfn>A fuga illo vel voluptatem laudantium. </dfn></dt><dd>Id iusto alias  deleniti fugit ut dolore omnis id voluptas excepturi. </dd><dt><dfn>Et vitae doloribus? </dfn></dt><dd>Et eligendi provident aut veritatis doloribus et reiciendis velit qui cumque enim. </dd><dt><dfn>Et facere quod. </dfn></dt><dd>At dolore corrupti sit neque omnis. </dd></dl>'
+      content: '<h1>Hic nostrum dolorem et consequatur animi et molestiae quas. </h1><p>Lorem ipsum dolor sit amet. At galisum galisum eum libero deserunt est inventore recusandae 33 sequi possimus ex quaerat dolor. In natus facere a quia dolorem <em>At rerum At suscipit quod in asperiores dolor qui asperiores unde</em>. Eos reprehenderit iste et dolorem nihil <strong>Qui maxime</strong>. </p><h2>Qui nobis sunt ea animi sunt eos dolorum dolor. </h2><p>Et atque quod est neque laborum id voluptate dolorem aut repellat fugiat ut dignissimos illum eos consequuntur dolorem et tempora facere! Et fugit quas <strong>Et sapiente est aliquam veritatis ut magni vitae</strong> et animi nihil cum eligendi optio. In tempore expedita vel quia doloresaut repellat non voluptatem sunt qui quia laudantium. </p><h1>Hic nostrum dolorem et consequatur animi et molestiae quas. </h1><p>Lorem ipsum dolor sit amet. At galisum galisum eum libero deserunt est inventore recusandae 33 sequi possimus ex quaerat dolor. In natus facere a quia dolorem <em>At rerum At suscipit quod in asperiores dolor qui asperiores unde</em>. Eos reprehenderit iste et dolorem nihil <strong>Qui maxime</strong>. </p><h2>Qui nobis sunt ea animi sunt eos dolorum dolor. </h2><p>Et atque quod est neque laborum id voluptate dolorem aut repellat fugiat ut dignissimos illum eos consequuntur dolorem et tempora facere! Et fugit quas <strong>Et sapiente est aliquam veritatis ut magni vitae</strong> et animi nihil cum eligendi optio. In tempore expedita vel quia doloresaut repellat non voluptatem sunt qui quia laudantium. </p>'
     };
 
 
@@ -43,22 +43,22 @@ block main
           img(src="img/guitar-1.svg", alt="")
         .blog-single__breadcrumbs
           +breadcrumbs(breadcrumbs)
-        .blog-single__left
-          .blog-single__sticky
-            .blog-single__image
-              img(src=data.image, alt=data.title)
-            .blog-single__info
-              .blog-single__author
-                if data.male === true
-                  +icon({name: 'male-user', width: 20, height: 20})
-                else
-                  +icon({name: 'female-user', width: 20, height: 20})
-                span !{data.author}
-              .blog-single__date
-                +icon({name: 'icon-calendar', width: 20, height: 20})
-                small !{data.date}
+        .blog-single__sidebar
+          .blog-single__info
+            .blog-single__author
+              if data.male === true
+                +icon({name: 'male-user', width: 20, height: 20})
+              else
+                +icon({name: 'female-user', width: 20, height: 20})
+              span !{data.author}
+            .blog-single__date
+              +icon({name: 'icon-calendar', width: 20, height: 20})
+              small !{data.date}
         .blog-single__content
-          h1.blog-single__title !{data.title}
-          p.blog-single__description !{data.desc}
-          .blog-single__content-box !{data.content}
+          .blog-single__top
+            h1.blog-single__title !{data.title}
+            p.blog-single__description !{data.desc}
+          .blog-single__image
+            img(src=data.image, alt=data.title)
+          .blog-single__editor !{data.content}
   +contact()
