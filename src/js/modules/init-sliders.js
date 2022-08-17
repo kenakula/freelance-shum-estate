@@ -1,17 +1,17 @@
-import Swiper, { Navigation, Scrollbar } from 'swiper';
-import { debounce } from '../utils/debounce';
+import Swiper, { Navigation, Pagination } from 'swiper';
 import { TEAM_SLIDER_OPTIONS, TESTIMONIALS_SLIDER_OPTIONS } from '../../blocks';
 
 const SINGLE_PAGE_SLIDER_OPTIONS = {
-  modules: [Navigation, Scrollbar],
-  scrollbar: {
-    el: '.swiper-scrollbar',
-    draggable: true,
-    dragClass: 'slider__drag',
-  },
+  modules: [Pagination],
   observer: true,
   observeParents: true,
   slidesPerView: 1,
+  spaceBetween: 20,
+  pagination: {
+    el: '.swiper-pagination',
+    draggable: true,
+    dynamic: true,
+  },
 };
 
 export const initSliders = () => {
@@ -22,9 +22,6 @@ export const initSliders = () => {
   }
 
   sliders.forEach(slider => {
-    let destroyBreakpoint = Boolean(slider.dataset.breakpoint)
-      ? window.matchMedia(`(min-width: ${slider.dataset.breakpoint}px)`)
-      : null;
     let breakpoints = Boolean(slider.dataset.breakpoints)
       ? JSON.parse(slider.dataset.breakpoints)
       : {};
@@ -45,18 +42,18 @@ export const initSliders = () => {
 
     let sliderInst = new Swiper(slider, options);
 
-    const onResize = () => {
-      if (destroyBreakpoint && destroyBreakpoint.matches) {
-        sliderInst.destroy(true, true);
-        positionLegends(slider);
-      } else if (destroyBreakpoint && !destroyBreakpoint.matches) {
-        clearLegendsPosition(slider);
-        sliderInst = new Swiper(slider, options);
-      }
-    };
+    // const onResize = () => {
+    //   if (destroyBreakpoint && destroyBreakpoint.matches) {
+    //     sliderInst.destroy(true, true);
+    //     positionLegends(slider);
+    //   } else if (destroyBreakpoint && !destroyBreakpoint.matches) {
+    //     clearLegendsPosition(slider);
+    //     sliderInst = new Swiper(slider, options);
+    //   }
+    // };
 
-    const resizeWatcher = debounce(onResize, 300);
+    // const resizeWatcher = debounce(onResize, 300);
 
-    window.addEventListener('resize', resizeWatcher);
+    // window.addEventListener('resize', resizeWatcher);
   });
 };

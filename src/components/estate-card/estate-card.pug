@@ -8,7 +8,7 @@ mixin estate-card({image, id, label, address, stats, metro, price})
     .estate-card__body
       h3.estate-card__title
         a(href="estate-single.html") !{label}
-      address.estate-card__address
+      .estate-card__info
         p.estate-card__street.text.text--muted !{address}
         .estate-card__attributes
           each stat in stats

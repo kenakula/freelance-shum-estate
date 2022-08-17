@@ -10,6 +10,23 @@
     align-self: stretch;
   }
 
+  &__pagination {
+    position: absolute;
+    left: 50%;
+    bottom: 40px;
+    transform: translateX(-50%);
+
+    .swiper-pagination-bullet {
+      width: 12px;
+      height: 12px;
+      margin: 0 5px;
+    }
+
+    .swiper-pagination-bullet-active {
+      background-color: $color-orange;
+    }
+  }
+
   &__scrollbar {
     position: absolute;
     left: 0;

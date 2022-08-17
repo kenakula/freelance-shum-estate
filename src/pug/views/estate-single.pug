@@ -24,12 +24,31 @@ block variables
   -
     const data = {
       id: 1,
-      title: 'Уютная квартирка в центре',
-      desc: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui consequuntur aperiam blanditiis ducimus dicta neque numquam consectetur ipsam illum quos?',
+      label: 'Уютная квартирка в центре',
+      desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. A suscipit voluptate saepe?',
       address: 'ул. Комсомольская д. 10',
-      metro: 'Ломоносовская',
-      price: '33000/мес.',
+      stats: [
+        '2 комнаты',
+        '60 кв. м.',
+        '5/5 этаж',
+      ],
+      metro: [
+        {
+          label: 'Пл.Восстания',
+          type: '1',
+          time: '5 мин',
+          way: 'walk',
+        },
+        {
+          label: 'Пл. Александра Невского',
+          type: '3',
+          time: '10 мин',
+          way: 'walk',
+        },
+      ],
+      price: '33000 ₽/мес.',
       image: 'https://via.placeholder.com/640x400',
+      hit: true,
       images: ['https://via.placeholder.com/640x400', 'https://via.placeholder.com/640x400', 'https://via.placeholder.com/640x400'],
       content: '<h1>Et amet cupiditate et harum ullam et provident rerum. </h1><p>Lorem ipsum dolor sit amet. Et cumque inventore <a href="https://www.loremipzum.com" target="_blank">Enim ut tempora quibusdam  voluptatem aliquid sed fuga rerum</a> hic Quis quisquam At enim vitae. Et soluta sapiente aut omnis undein perferendis cum facilis necessitatibus non expedita odit. </p><h2>Aut illum earum aut exercitationem dolorem aut culpa facilis. </h2><p>Ut galisum blanditiis quo modi incidunt rem maiores accusamus sed libero exercitationem rem iure nemo qui nihil velit sed velit assumenda. Ut quos exercitationem <strong>Et praesentium et autem neque</strong>. </p><dl><dt><dfn>Non necessitatibus perferendis. </dfn></dt><dd>Vel corrupti earum et voluptatem commodi qui voluptas quia. </dd><dt><dfn>Est illum ipsum. </dfn></dt><dd>Est quisquam quibusdam sed facilis quis. </dd><dt><dfn>Aut eveniet voluptate. </dfn></dt><dd>Sit asperiores aliquam quo corporis fuga qui voluptatem beatae et  perspiciatis! </dd><dt><dfn>Aut expedita consequuntur. </dfn></dt><dd>Ea tempore internos et adipisci asperiores. </dd></dl><blockquote cite="https://www.loremipzum.com">Est obcaecati excepturi sit dolor minima et nihil sint et nisi unde At eaque repellendus eos quam blanditiis. </blockquote><h3>Et atque omnis a voluptates sunt. </h3><p>Sit earum molestias in aperiam dolor At veniam consequatur et sunt quia ex quibusdam architecto  nulla facilis. Hic sint molestiae <em>Ut maxime</em> est magnam voluptas. Non culpa atque ab voluptates vero vel fugit laudantium et fugit voluptates. </p><ol><li>Ad quos voluptas ut illum quia. </li><li>Cum esse fugiat ut vero soluta qui voluptatem ipsa est odit magnam. </li><li>Et suscipit voluptas At incidunt nemo. </li><li>Id ipsum numquam eum dolores exercitationem qui similique quod? </li></ol><ul><li>Ut dolor cumque aut architecto voluptas aut veniam fugiat. </li><li>Est iste iure eum molestiae cumque sed dignissimos quae non voluptatum earum. </li></ul>'
     };
@@ -45,9 +64,36 @@ block main
         .estate-single__sidebar
           .estate-single__info
         .estate-single__content
+          .swiper.slider.estate-single__slider(data-slider)
+            ul.swiper-wrapper.slider__wrapper
+              each item in data.images
+                li.swiper-slide.slider__slide
+                  a(href=item  data-lg-size="1024-800").estate-single__image(data-lightgallery)
+                    img(src=item, alt="")
+            .swiper-pagination.slider__pagination
           .estate-single__top
-            h1.estate-single__title !{data.title}
+            .estate-single__price
+              p !{data.price}
+            h1.estate-single__title !{data.label}
             p.estate-single__description !{data.desc}
+          .estate-single__info
+            p.estate-single__street.text.text--muted !{data.address}
+            .estate-single__attributes
+              each stat in data.stats
+                span !{stat}
+            .estate-single__metro
+              ul.estate-single__metro-list
+                each item in data.metro
+                  li.estate-single__metro-item(class=`estate-single__metro-item--${item.type}`)
+                    +icon({name: 'icon-metro', width: 20, height: 20})
+                    | !{item.label}
+                    span.estate-single__way
+                      case item.way
+                        when 'walk'
+                          +icon({name: 'icon-walk', width: 15, height: 15})
+                        when 'bus'
+                          +icon({name: 'icon-bus', width: 15, height: 15})
+                      | !{item.time}
           .estate-single__editor !{data.content}
 
   +contact()
