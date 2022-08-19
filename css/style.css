@@ -3917,6 +3917,105 @@ h2 {
   align-self: flex-end;
 }
 
+.estate-info__street {
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  margin: 0;
+}
+.estate-info__title {
+  font-size: 1.25rem;
+  line-height: 1.625rem;
+  margin: 0 0 20px 0;
+  font-family: "Glasten", "Montserrat", serif;
+}
+.estate-info__attributes {
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 0 10px 0;
+}
+.estate-info__attributes span {
+  position: relative;
+  padding-left: 20px;
+}
+.estate-info__attributes span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-color: #141414;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  opacity: 0.5;
+}
+.estate-info__attributes span:first-child {
+  padding-left: 0;
+}
+.estate-info__attributes span:first-child::before {
+  display: none;
+}
+.estate-info__metro {
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+}
+.estate-info__metro-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.estate-info__metro-item {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+}
+.estate-info__metro-item > svg {
+  margin-right: 5px;
+}
+.estate-info__metro-item--1 > svg {
+  color: #f34213;
+}
+.estate-info__metro-item--2 > svg {
+  color: #177ccc;
+}
+.estate-info__metro-item--3 > svg {
+  color: #3f826d;
+}
+.estate-info__metro-item--4 > svg {
+  color: #fa9021;
+}
+.estate-info__metro-item--5 > svg {
+  color: #680c78;
+}
+.estate-info__features {
+  padding-top: 20px;
+}
+.estate-info__features-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.estate-info__features-item {
+  display: flex;
+  align-items: center;
+}
+.estate-info__features-item svg {
+  margin-right: 10px;
+}
+.estate-info__way {
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+  opacity: 0.5;
+}
+
 .form__form {
   display: flex;
   flex-direction: column;
@@ -4314,6 +4413,19 @@ h2 {
   max-width: 100%;
   opacity: 0.05;
 }
+.estate-single__price {
+  font-size: 1.125rem;
+  line-height: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 20px;
+  height: 40px;
+  background-color: #177ccc;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  font-weight: 700;
+  color: #ffffff;
+}
 .estate-single__breadcrumbs {
   margin-bottom: 40px;
 }
@@ -4321,7 +4433,12 @@ h2 {
   position: relative;
   margin-bottom: 20px;
 }
+.estate-single__sidebar .estate-single__info {
+  display: none;
+}
 .estate-single__slider {
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
   overflow: hidden;
   padding-bottom: 0;
   margin-bottom: 20px;
@@ -4343,100 +4460,6 @@ h2 {
   height: 100%;
   font-family: "object-fit:cover";
   object-fit: cover;
-}
-.estate-single__price {
-  font-size: 1.125rem;
-  line-height: 1.5rem;
-  display: inline-flex;
-  align-items: center;
-  padding: 5px 20px;
-  height: 40px;
-  background-color: #177ccc;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-  font-weight: 700;
-  color: #ffffff;
-}
-.estate-single__street {
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  margin: 0;
-}
-.estate-single__attributes {
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 0 10px 0;
-}
-.estate-single__attributes span {
-  position: relative;
-  padding-left: 20px;
-}
-.estate-single__attributes span::before {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 8px;
-  top: 50%;
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background-color: #141414;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  opacity: 0.5;
-}
-.estate-single__attributes span:first-child {
-  padding-left: 0;
-}
-.estate-single__attributes span:first-child::before {
-  display: none;
-}
-.estate-single__metro {
-  font-size: 0.875rem;
-  line-height: 1.125rem;
-}
-.estate-single__metro-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-.estate-single__metro-item {
-  display: flex;
-  align-items: center;
-  font-weight: 600;
-}
-.estate-single__metro-item > svg {
-  margin-right: 5px;
-}
-.estate-single__metro-item--1 > svg {
-  color: #f34213;
-}
-.estate-single__metro-item--2 > svg {
-  color: #177ccc;
-}
-.estate-single__metro-item--3 > svg {
-  color: #3f826d;
-}
-.estate-single__metro-item--4 > svg {
-  color: #fa9021;
-}
-.estate-single__metro-item--5 > svg {
-  color: #680c78;
-}
-.estate-single__way {
-  display: flex;
-  align-items: center;
-  margin-left: 5px;
-  opacity: 0.5;
-}
-.estate-single__slider {
-  margin-left: calc(-50vw + 50%);
-  margin-right: calc(-50vw + 50%);
 }
 
 .single-page__inner {
@@ -4735,6 +4758,10 @@ h2 {
     font-size: 0.75rem;
     line-height: 1rem;
   }
+  .estate-info__metro {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  }
   .about-page__inner {
     flex-direction: row;
   }
@@ -4782,9 +4809,15 @@ h2 {
     -ms-grid-columns: 1fr 1fr;
     grid-template-columns: 1fr 1fr;
   }
-  .estate-single__metro {
-    font-size: 0.75rem;
-    line-height: 1rem;
+  .estate-single__guitar {
+    left: 0;
+    width: 30%;
+  }
+  .estate-single__info {
+    position: -webkit-sticky;
+    position: sticky;
+    left: 0;
+    top: 110px;
   }
   .contacts-page__address {
     -ms-grid-row: 1;
@@ -4899,6 +4932,10 @@ h2 {
     grid-template-columns: 1fr 2fr;
     gap: 20px;
   }
+  .blog-single__guitar {
+    left: 0;
+    width: 30%;
+  }
   .blog-single__info {
     position: -webkit-sticky;
     position: sticky;
@@ -4909,6 +4946,31 @@ h2 {
     -ms-grid-columns: 1fr 1fr 1fr;
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 40px;
+  }
+  .estate-single__inner {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 40px;
+  }
+  .estate-single__breadcrumbs {
+    width: 100%;
+  }
+  .estate-single__sidebar {
+    width: 30%;
+  }
+  .estate-single__sidebar .estate-single__info {
+    display: block;
+  }
+  .estate-single__content {
+    width: calc(70% - 40px);
+  }
+  .estate-single__content .estate-single__info {
+    display: none;
+  }
+  .estate-single__slider {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
   }
   .single-page__inner {
         grid-template-areas: "breadcrumbs breadcrumbs" "sidebar content";
