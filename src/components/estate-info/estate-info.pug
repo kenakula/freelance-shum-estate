@@ -1,4 +1,4 @@
-mixin estate-info({address, stats, metro, features})
+mixin estate-info({address, stats, metro, features, technical})
   .estate-info
     p.estate-info__street.text.text--muted !{address}
     .estate-info__attributes
@@ -22,6 +22,14 @@ mixin estate-info({address, stats, metro, features})
         p.estate-info__title Удобства
         ul.estate-info__features-list
           each item in features
-            li.estate-info__features-item
+            li.estate-info__features-item.text.text--muted
               +icon({name: item.icon, width: 20, height: 20})
               span !{item.text}
+    if technical
+      .estate-info__technical
+        p.estate-info__title Характеристики
+        ul.estate-info__technical-list
+          each tech in technical
+            li.estate-info__technical-item
+              span !{tech.label}
+              span !{tech.value}

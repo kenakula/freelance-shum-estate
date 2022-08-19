@@ -101,6 +101,7 @@
 
   &__features {
     padding-top: 20px;
+    margin-bottom: 20px;
 
     &-list {
       @include list-reset;
@@ -109,9 +110,46 @@
     &-item {
       display: flex;
       align-items: center;
+      margin-bottom: 5px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
 
       svg {
         margin-right: 10px;
+      }
+    }
+  }
+
+  &__technical {
+    &-list {
+      @include list-reset;
+    }
+
+    &-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 5px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      span {
+        &:first-child {
+          position: relative;
+          padding-right: 40px;
+
+          &::before {
+            @include pseudo;
+            right: 9px;
+            top: 12px;
+            width: 20px;
+            height: 1px;
+            background-color: $color-black;
+          }
+        }
       }
     }
   }

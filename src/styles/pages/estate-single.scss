@@ -69,10 +69,13 @@
   }
 
   &__info {
+    margin-bottom: 40px;
+
     @include min-tablet {
       position: sticky;
       left: 0;
       top: 110px;
+      margin-bottom: 0;
     }
   }
 
