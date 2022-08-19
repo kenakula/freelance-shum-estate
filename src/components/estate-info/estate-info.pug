@@ -31,5 +31,5 @@ mixin estate-info({address, stats, metro, features, technical})
         ul.estate-info__technical-list
           each tech in technical
             li.estate-info__technical-item
-              span !{tech.label}
-              span !{tech.value}
+              p !{tech.label}
+              p !{tech.value}
