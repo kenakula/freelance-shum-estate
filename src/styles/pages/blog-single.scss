@@ -23,6 +23,11 @@
     width: 100%;
     max-width: 100%;
     opacity: 0.05;
+
+    @include min-laptop {
+      left: 0;
+      width: 30%;
+    }
   }
 
   &__breadcrumbs {

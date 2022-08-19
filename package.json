@@ -70,7 +70,6 @@
   },
   "dependencies": {
     "choices.js": "^10.1.0",
-    "lightgallery": "^2.5.0",
     "swiper": "^8.3.2"
   }
 }

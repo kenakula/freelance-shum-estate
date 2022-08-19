@@ -1,0 +1,27 @@
+mixin estate-info({address, stats, metro, features})
+  .estate-info
+    p.estate-info__street.text.text--muted !{address}
+    .estate-info__attributes
+      each stat in stats
+        span !{stat}
+    .estate-info__metro
+      ul.estate-info__metro-list
+        each item in metro
+          li.estate-info__metro-item(class=`estate-info__metro-item--${item.type}`)
+            +icon({name: 'icon-metro', width: 20, height: 20})
+            | !{item.label}
+            span.estate-info__way
+              case item.way
+                when 'walk'
+                  +icon({name: 'icon-walk', width: 15, height: 15})
+                when 'bus'
+                  +icon({name: 'icon-bus', width: 15, height: 15})
+              | !{item.time}
+    if features
+      .estate-info__features
+        p.estate-info__title Удобства
+        ul.estate-info__features-list
+          each item in features
+            li.estate-info__features-item
+              +icon({name: item.icon, width: 20, height: 20})
+              span !{item.text}
