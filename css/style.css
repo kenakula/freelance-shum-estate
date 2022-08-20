@@ -1564,9 +1564,7 @@ svg:not(:root) {
 
 .section {
   padding: 40px 0;
-  transition: opacity 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
-  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out, -webkit-transform 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out;
 }
 .section__top {
   display: flex;
@@ -1580,17 +1578,9 @@ svg:not(:root) {
 }
 .section[data-reveal] {
   opacity: 0;
-  -webkit-transform: translateX(-100px);
-          transform: translateX(-100px);
-}
-.section[data-reveal]:nth-of-type(2n + 1) {
-  -webkit-transform: translateX(100px);
-          transform: translateX(100px);
 }
 .section[data-reveal].visible {
   opacity: 1;
-  -webkit-transform: translateX(0);
-          transform: translateX(0);
 }
 
 .page__top {
