@@ -1,7 +1,7 @@
 mixin services()
-  section.section.services
+  section.section.services&attributes(attributes)
     .services__splat
-      +icon({name: 'splat-2', width: 320, height: 320})
+      img(src="img/splat-2.svg", alt="", width=320, height=320)
     .container
       .services__inner
         .section__top.section__top--centered

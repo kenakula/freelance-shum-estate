@@ -7,15 +7,30 @@
   &__splat {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 45%;
     transform: translate(-50%, -50%);
     color: $color-orange;
     width: 100%;
     height: 100%;
 
-    svg {
+    img {
       width: 150vw;
       height: 100%;
+      filter: brightness(0) saturate(100%) invert(60%) sepia(69%) saturate(643%) hue-rotate(341deg) brightness(97%)
+        contrast(103%);
+    }
+
+    @include min-tablet {
+      top: 52%;
+    }
+
+    @include min-laptop {
+      top: 70%;
+    }
+
+    @include min-desktop {
+      width: 50%;
+      left: 80%;
     }
   }
 

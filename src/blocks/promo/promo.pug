@@ -1,9 +1,9 @@
 mixin promo()
-  section.section.promo
+  section.section.promo&attributes(attributes)
     .container.promo__container
       .promo__inner
         .promo__splat
-          +icon({name: 'splat-1', width: 150, height: 150})
+          img(src="img/splat-1.svg", alt="", width=150, height=150)
         .promo__text
           span.text.text--accent Агенство недвижимости
           h1 Короткий слоган!

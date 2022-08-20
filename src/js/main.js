@@ -1,4 +1,5 @@
 import { initTogglers } from '../components/toggler/toggler';
+import { blockReveal } from './modules/block-reveal';
 import { initLightgallery } from './modules/init-lightgallery';
 import { initPage } from './modules/init-page';
 import { initSelects } from './modules/init-selects';
@@ -12,4 +13,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initSliders();
   initSelects();
   initLightgallery();
+  blockReveal();
 });

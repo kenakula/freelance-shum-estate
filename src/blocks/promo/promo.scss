@@ -44,9 +44,11 @@
     left: -10%;
     color: $color-red;
 
-    svg {
+    img {
       width: 35vw;
       height: 38vw;
+      filter: brightness(0) saturate(100%) invert(34%) sepia(37%) saturate(6161%) hue-rotate(355deg) brightness(98%)
+        contrast(95%);
     }
 
     @include min-tablet {

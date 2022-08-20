@@ -7,15 +7,17 @@
   &__splat {
     position: absolute;
     left: 50%;
-    top: 50%;
+    top: 68%;
     transform: translate(-50%, -50%);
     color: $color-red;
     width: 100%;
     height: 100%;
 
-    svg {
+    img {
       width: 150vw;
       height: 100%;
+      filter: brightness(0) saturate(100%) invert(31%) sepia(99%) saturate(3337%) hue-rotate(357deg) brightness(99%)
+        contrast(92%);
     }
   }
 

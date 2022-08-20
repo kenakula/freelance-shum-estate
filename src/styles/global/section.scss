@@ -1,5 +1,6 @@
 .section {
   padding: 40px 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 
   &__top {
     display: flex;
@@ -14,6 +15,20 @@
 
     @include min-tablet {
       gap: 40px;
+    }
+  }
+
+  &[data-reveal] {
+    opacity: 0;
+    transform: translateX(-100px);
+
+    &:nth-of-type(2n + 1) {
+      transform: translateX(100px);
+    }
+
+    &.visible {
+      opacity: 1;
+      transform: translateX(0);
     }
   }
 
