@@ -80,48 +80,62 @@
           <div class="estate-page__inner">
             <div class="estate-page__filter">
               <form class="filter" action="#" method="POST" data-filter data-action="estate_filter">
-                <div class="filter__multiselect" data-multiselect data-name="roomsCount">
-                  <div class="filter__slider"><span class="filter__label text text--muted">Комнат:</span>
-                    <div class="filter__options">
-                      <div class="filter__element">
-                        <div class="checkbox">
-                          <input class="visually-hidden" type="checkbox" value="1" id="room1" name="rooms"/>
-                          <label for="room1">1
-                            <svg width="20" height="20" aria-hidden="true">
-                              <use xlink:href="#icon-check"></use>
-                            </svg>
-                          </label>
-                        </div>
+                <div class="filter__multiselect filter__group" data-multiselect data-name="roomsCount"><span class="filter__label text text--muted">Комнат:</span>
+                  <div class="filter__options">
+                    <div class="filter__element">
+                      <div class="checkbox">
+                        <input class="visually-hidden" type="checkbox" value="1" id="room1" name="rooms"/>
+                        <label for="room1">1
+                          <svg width="20" height="20" aria-hidden="true">
+                            <use xlink:href="#icon-check"></use>
+                          </svg>
+                        </label>
                       </div>
-                      <div class="filter__element">
-                        <div class="checkbox">
-                          <input class="visually-hidden" type="checkbox" value="2" id="room2" name="rooms"/>
-                          <label for="room2">2
-                            <svg width="20" height="20" aria-hidden="true">
-                              <use xlink:href="#icon-check"></use>
-                            </svg>
-                          </label>
-                        </div>
+                    </div>
+                    <div class="filter__element">
+                      <div class="checkbox">
+                        <input class="visually-hidden" type="checkbox" value="2" id="room2" name="rooms"/>
+                        <label for="room2">2
+                          <svg width="20" height="20" aria-hidden="true">
+                            <use xlink:href="#icon-check"></use>
+                          </svg>
+                        </label>
                       </div>
-                      <div class="filter__element">
-                        <div class="checkbox">
-                          <input class="visually-hidden" type="checkbox" value="3" id="room3" name="rooms"/>
-                          <label for="room3">3
-                            <svg width="20" height="20" aria-hidden="true">
-                              <use xlink:href="#icon-check"></use>
-                            </svg>
-                          </label>
-                        </div>
+                    </div>
+                    <div class="filter__element">
+                      <div class="checkbox">
+                        <input class="visually-hidden" type="checkbox" value="3" id="room3" name="rooms"/>
+                        <label for="room3">3
+                          <svg width="20" height="20" aria-hidden="true">
+                            <use xlink:href="#icon-check"></use>
+                          </svg>
+                        </label>
                       </div>
-                      <div class="filter__element">
-                        <div class="checkbox">
-                          <input class="visually-hidden" type="checkbox" value="4" id="room4" name="rooms"/>
-                          <label for="room4">4
-                            <svg width="20" height="20" aria-hidden="true">
-                              <use xlink:href="#icon-check"></use>
-                            </svg>
-                          </label>
-                        </div>
+                    </div>
+                    <div class="filter__element">
+                      <div class="checkbox">
+                        <input class="visually-hidden" type="checkbox" value="4" id="room4" name="rooms"/>
+                        <label for="room4">4
+                          <svg width="20" height="20" aria-hidden="true">
+                            <use xlink:href="#icon-check"></use>
+                          </svg>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="filter__radio filter__group" data-radio data-name="order"><span class="filter__label text text--muted">Цена:</span>
+                  <div class="filter__options">
+                    <div class="filter__element">
+                      <div class="radio">
+                        <input class="visually-hidden" type="radio" value="ASC" id="order1" name="order" checked="checked"/>
+                        <label for="order1">Вверх</label>
+                      </div>
+                    </div>
+                    <div class="filter__element">
+                      <div class="radio">
+                        <input class="visually-hidden" type="radio" value="DESC" id="order2" name="order"/>
+                        <label for="order2">Вниз</label>
                       </div>
                     </div>
                   </div>

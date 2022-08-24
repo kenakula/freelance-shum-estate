@@ -157,6 +157,7 @@ var initFilter = function initFilter() {
     var data = {};
     var url = "".concat(__webpack_require__.g.wpGlobal ? __webpack_require__.g.wpGlobal.ajaxUrl : '#', "?action=").concat(action);
     var rooms = e.currentTarget.rooms;
+    var sortOrder = e.currentTarget.order;
 
     if (rooms) {
       var values = Array.from(rooms).filter(function (item) {
@@ -165,6 +166,10 @@ var initFilter = function initFilter() {
         return item.value;
       });
       data['rooms'] = values;
+    }
+
+    if (sortOrder) {
+      data['order'] = sortOrder.value;
     }
 
     filter.classList.add('loading');

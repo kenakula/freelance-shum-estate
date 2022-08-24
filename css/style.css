@@ -1890,7 +1890,7 @@ h2 {
   align-items: center;
   gap: 10px;
 }
-.filter__slider {
+.filter__group {
   display: flex;
   align-items: center;
   gap: 5px;
@@ -2735,6 +2735,47 @@ h2 {
 }
 .form--single-row .form__form {
   flex-direction: row;
+}
+
+.radio label {
+  font-size: 1.0625rem;
+  line-height: 1.25rem;
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 5px 10px 5px 35px;
+  min-height: 30px;
+  cursor: pointer;
+}
+.radio label::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #fa9021;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+.radio label::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #fa9021;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  opacity: 0;
+}
+.radio input:checked + label::after {
+  opacity: 1;
 }
 
 .logo {
