@@ -15,6 +15,7 @@ export const initFilter = () => {
     }?action=${action}`;
 
     const rooms = e.currentTarget.rooms;
+    const sortOrder = e.currentTarget.order;
 
     if (rooms) {
       const values = Array.from(rooms)
@@ -22,6 +23,10 @@ export const initFilter = () => {
         .map(item => item.value);
 
       data['rooms'] = values;
+    }
+
+    if (sortOrder) {
+      data['order'] = sortOrder.value;
     }
 
     filter.classList.add('loading');
@@ -33,9 +38,7 @@ export const initFilter = () => {
       },
       body: new URLSearchParams(data).toString(),
     })
-      .then(response => {
-        return response.text();
-      })
+      .then(response => response.text())
       .then(result => {
         if (result) {
           resultContainer.innerHTML = result;

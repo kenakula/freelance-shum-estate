@@ -4,6 +4,22 @@ block variables
   - const mainPage = false;
   - const currentPage = 'estate';
   -
+    const orderRadios = [
+      {
+        id: 'order1',
+        name: 'order',
+        value: 'ASC',
+        label: 'Вверх',
+        checked: true,
+      },
+      {
+        id: 'order2',
+        name: 'order',
+        value: 'DESC',
+        label: 'Вниз',
+      },
+    ];
+
     const roomsCheckboxes = [
       {
         id: 'room1',
@@ -41,13 +57,20 @@ block main
       .estate-page__inner
         .estate-page__filter
           form.filter(action="#" method="POST" data-filter data-action="estate_filter")
-            .filter__multiselect(data-multiselect data-name="roomsCount")
-              .filter__slider
-                span.filter__label.text.text--muted Комнат:
-                .filter__options
-                  each item in roomsCheckboxes
-                    .filter__element
-                      +checkbox(item)
+            .filter__multiselect.filter__group(data-multiselect data-name="roomsCount")
+              span.filter__label.text.text--muted Комнат:
+              .filter__options
+                each item in roomsCheckboxes
+                  .filter__element
+                    +checkbox(item)
+            .filter__radio.filter__group(data-radio data-name="order")
+              span.filter__label.text.text--muted Цена:
+              .filter__options
+                each radio in orderRadios
+                  .filter__element
+                    +radio(radio)
+
+
         .estate-page__catalog
           ul.estate-page__list#filter-result
             //- li.estate-page__item.estate-page__item--empty

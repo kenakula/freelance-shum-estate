@@ -1,0 +1,4 @@
+mixin radio({id, name, value, label, checked})
+  .radio
+    input.visually-hidden(type="radio", value=value, id=id, name=name, checked=checked)
+    label(for=id) !{label}
