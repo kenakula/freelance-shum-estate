@@ -1,0 +1,41 @@
+.pagination {
+  $c: &;
+
+  padding-top: 40px;
+
+  ul {
+    @include list-reset;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  li {
+    display: flex;
+  }
+
+  .page-numbers:not(ul) {
+    @include font(20, 24);
+    font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px 10px;
+    cursor: pointer;
+
+    &:not(.prev):not(.next) {
+      border: 1px solid $color-orange;
+    }
+
+    &.current {
+      background-color: $color-orange;
+      color: $color-white;
+      border: none;
+      cursor: auto;
+    }
+  }
+
+  .page-numbers:not(.current):not(ul) {
+    @include interactive-opacity;
+  }
+}

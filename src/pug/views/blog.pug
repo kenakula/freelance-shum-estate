@@ -13,20 +13,9 @@ block main
     .container
       .blog-page__inner
         .blog-page__body
-          .blog-page__pinned
-            ul.blog-page__list.blog-page__list--fancy
-              each item in blogItems
-                if item.pinned === true
-                  li.blog-page__item
-                    +blogCard(item)
-            .blog-page__brush
-              +icon({name: 'brush-2', width: 375, height: 80})
-          .blog-page__all
-            .blog-page__title
-              h2 Всё что есть
-            ul.blog-page__list
-              each item in blogItems
-                if item.pinned !== true
-                  li.blog-page__item
-                    +blogCard(item)
+          ul.blog-page__list
+            each item in blogItems
+              li.blog-page__item
+                +blogCard(item)
+          +pagination()
 

@@ -23,21 +23,6 @@
       column-gap: 20px;
       row-gap: 40px;
     }
-
-    &--fancy {
-      @include min-tablet {
-        grid-template-columns: 1fr 1fr;
-
-        #{$c}__item:first-child {
-          grid-column: 1 / 3;
-        }
-      }
-    }
-  }
-
-  &__pinned {
-    position: relative;
-    padding-bottom: 120px;
   }
 
   &__brush {

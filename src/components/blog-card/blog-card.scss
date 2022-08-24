@@ -38,6 +38,10 @@
       @include transition(color);
     }
 
+    p {
+      margin: 0;
+    }
+
     @include min-tablet {
       a {
         &:hover {

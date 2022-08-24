@@ -69,7 +69,6 @@
     ]
   },
   "dependencies": {
-    "choices.js": "^10.1.0",
     "fslightbox": "^3.3.1",
     "swiper": "^8.3.2"
   }

@@ -3,6 +3,33 @@ extends ../base/layout
 block variables
   - const mainPage = false;
   - const currentPage = 'estate';
+  -
+    const roomsCheckboxes = [
+      {
+        id: 'room1',
+        name: 'rooms',
+        value: '1',
+        label: '1',
+      },
+      {
+        id: 'room2',
+        name: 'rooms',
+        value: '2',
+        label: '2',
+      },
+      {
+        id: 'room3',
+        name: 'rooms',
+        value: '3',
+        label: '3',
+      },
+      {
+        id: 'room4',
+        name: 'rooms',
+        value: '4',
+        label: '4',
+      },
+    ]
 
 block main
   .page__top.container
@@ -13,11 +40,18 @@ block main
     .container
       .estate-page__inner
         .estate-page__filter
-          form.filter#filter(action="#" method="POST")
-            +select(estateRegionFilter)
-            +select(estateMetroFilter)
+          form.filter(action="#" method="POST" data-filter data-action="estate_filter")
+            .filter__multiselect(data-multiselect data-name="roomsCount")
+              .filter__slider
+                span.filter__label.text.text--muted Комнат:
+                .filter__options
+                  each item in roomsCheckboxes
+                    .filter__element
+                      +checkbox(item)
         .estate-page__catalog
-          ul.estate-page__list
+          ul.estate-page__list#filter-result
+            //- li.estate-page__item.estate-page__item--empty
+            //-   p.text.text--muted Записей не найдено. Возможно стоит ослабить фильтр.
             each item in estateItems
               li.estate-page__item
                 +estate-card(item)

@@ -91,4 +91,12 @@
       object-fit: cover;
     }
   }
+
+  &__editor {
+    a {
+      @include interactive-opacity;
+      color: $color-blue;
+      font-weight: 500;
+    }
+  }
 }

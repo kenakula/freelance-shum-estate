@@ -26,5 +26,19 @@
 
   &__item {
     display: flex;
+
+    &--empty {
+      grid-column: 1 / 4;
+      justify-content: center;
+      align-items: center;
+
+      p {
+        @include font(24, 32);
+        margin: 0;
+        padding: 40px;
+        max-width: 60%;
+        text-align: center;
+      }
+    }
   }
 }

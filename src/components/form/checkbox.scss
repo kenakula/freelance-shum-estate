@@ -1,0 +1,36 @@
+.checkbox {
+  $c: &;
+
+  label {
+    @include font(17, 20);
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 5px 10px 5px 35px;
+    min-height: 30px;
+    cursor: pointer;
+
+    &::before {
+      @include pseudo;
+      left: 0;
+      top: 50%;
+      width: 25px;
+      height: 25px;
+      border-radius: $border-radius1;
+      border: 2px solid $color-orange;
+      transform: translateY(-50%);
+    }
+
+    svg {
+      position: absolute;
+      opacity: 0;
+      left: 2px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+
+  input:checked + label svg {
+    opacity: 1;
+  }
+}

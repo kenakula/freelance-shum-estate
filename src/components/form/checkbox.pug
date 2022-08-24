@@ -1,0 +1,5 @@
+mixin checkbox({id, name, value, label})
+  .checkbox
+    input.visually-hidden(type="checkbox", value=value, id=id, name=name)
+    label(for=id) !{label}
+      +icon({name: 'icon-check', width: 20, height: 20})

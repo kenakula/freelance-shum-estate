@@ -65,6 +65,7 @@
 
     p {
       @include font(14, 18);
+      margin: 0;
       font-style: normal;
     }
 
