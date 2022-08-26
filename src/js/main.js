@@ -1,4 +1,5 @@
-import { initTogglers } from '../components/toggler/toggler';
+import { initForm } from '../components';
+import { initTogglers } from '../components';
 import { blockReveal } from './modules/block-reveal';
 import { initFilter } from './modules/init-filter';
 import { initLightgallery } from './modules/init-lightgallery';
@@ -14,4 +15,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initLightgallery();
   blockReveal();
   initFilter();
+  initForm();
 });

@@ -1,11 +1,26 @@
 mixin form()
 
   .form&attributes(attributes)
-    form.form__form(action="#" method="POST")
-      .form__row
-        .form__icon
-          +icon({name: 'icon-mail', width: 30, height: 30})
-        .form__input
-          label.visually-hidden(for="mail") Ваша почта
-          input(type="email" name="mail" id="mail" required)
-      button.button.form__submit Подать
+    form.form__form(action="#" method="POST" data-form)
+      #wpcf7-f135-o1.wpcf7(role='form' lang='ru-RU' dir='ltr')
+        .screen-reader-response
+          p(role='status' aria-live='polite' aria-atomic='true')
+          ul
+        div(style='display: none;')
+          input(type='hidden' name='_wpcf7' value='135')
+          input(type='hidden' name='_wpcf7_version' value='5.6.2')
+          input(type='hidden' name='_wpcf7_locale' value='ru_RU')
+          input(type='hidden' name='_wpcf7_unit_tag' value='wpcf7-f135-o1')
+          input(type='hidden' name='_wpcf7_container_post' value='0')
+          input(type='hidden' name='_wpcf7_posted_data_hash' value='')
+        .form__row
+          .form__icon
+            svg(width='30' height='30' aria-hidden='true')
+              use(xlink:href='#icon-mail')
+          .form__input
+            label.visually-hidden(for='mail') &Vcy;&acy;&shcy;&acy; &pcy;&ocy;&chcy;&tcy;&acy;
+            span.wpcf7-form-control-wrap(data-name='mail')
+              input#mail.wpcf7-form-control.wpcf7-text.wpcf7-email.wpcf7-validates-as-required.wpcf7-validates-as-email(type='email' name='mail' value='' size='40' aria-required='true' aria-invalid='false')
+        p
+          input.wpcf7-form-control.has-spinner.wpcf7-submit.button.form__submit(type='submit' value='Подать')
+        .wpcf7-response-output(aria-hidden='true')
