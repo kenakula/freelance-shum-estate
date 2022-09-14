@@ -1,0 +1,9 @@
+mixin socials({list})
+
+  .socials&attributes(attributes)
+    ul.socials__list
+      each item in list
+        - const {link, label, icon} = item;
+        li.socials__item
+          a(href=link target="_blank" rel="noreferrer noopener" aria-label=label)
+            +icon({name: icon, width: 30, height: 30})

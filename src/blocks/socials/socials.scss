@@ -1,0 +1,45 @@
+.socials {
+  $c: &;
+
+  &__list {
+    @include list-reset;
+
+    display: flex;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    svg {
+      display: block;
+
+      @include min-tablet {
+        width: 25px;
+        height: 25px;
+      }
+    }
+
+    a {
+      position: relative;
+
+      &::before {
+        @include pseudo;
+        left: -5px;
+        top: -5px;
+        right: -5px;
+        bottom: -5px;
+      }
+
+      @include min-tablet {
+        @include interactive-opacity;
+      }
+    }
+  }
+}
