@@ -1,4 +1,35 @@
 mixin form()
+  -
+    const radios = [
+      {
+        id: 'radio-buy',
+        name: 'radio-option',
+        value: 'Купить',
+        label: 'Купить',
+        checked: true,
+      },
+      {
+        id: 'radio-sell',
+        name: 'radio-option',
+        value: 'Продать',
+        label: 'Продать',
+        checked: false,
+      },
+      {
+        id: 'radio-rent',
+        name: 'radio-option',
+        value: 'Сдать',
+        label: 'Сдать',
+        checked: false,
+      },
+      {
+        id: 'radio-work',
+        name: 'radio-option',
+        value: 'Сотрудничать',
+        label: 'Сотрудничать',
+        checked: false,
+      },
+    ]
 
   .form&attributes(attributes)
     form.form__form(action="#" method="POST" data-form)
@@ -13,6 +44,25 @@ mixin form()
           input(type='hidden' name='_wpcf7_unit_tag' value='wpcf7-f135-o1')
           input(type='hidden' name='_wpcf7_container_post' value='0')
           input(type='hidden' name='_wpcf7_posted_data_hash' value='')
+        .form__row.form__row--radios
+          span.wpcf7-form-control-wrap(data-name='radio-option')
+            span#form-radio.wpcf7-form-control.wpcf7-radio
+              span.wpcf7-list-item.first
+                label
+                  input.visually-hidden(type='radio' name='radio-option' value='Купить' checked='checked')
+                  span.wpcf7-list-item-label Купить
+              span.wpcf7-list-item
+                label
+                  input.visually-hidden(type='radio' name='radio-option' value='Продать')
+                  span.wpcf7-list-item-label Продать
+              span.wpcf7-list-item
+                label
+                  input.visually-hidden(type='radio' name='radio-option' value='Сдать')
+                  span.wpcf7-list-item-label Сдать
+              span.wpcf7-list-item.last
+                label
+                  input.visually-hidden(type='radio' name='radio-option' value='Сотрудничать')
+                  span.wpcf7-list-item-label Сотрудничать
         .form__row
           .form__icon
             svg(width='30' height='30' aria-hidden='true')

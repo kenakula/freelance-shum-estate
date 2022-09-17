@@ -17,7 +17,7 @@
     background-repeat: no-repeat;
     transform: translateY(-50%);
 
-    @media (min-width: 500px) {
+    @include min-tablet-small {
       right: 5%;
       top: 60%;
     }
@@ -46,7 +46,7 @@
       @include font(16, 22);
     }
 
-    @media (min-width: 500px) {
+    @include min-tablet-small {
       max-width: 250px;
     }
 
@@ -71,7 +71,7 @@
     transform-origin: left bottom;
     color: $color-red;
 
-    @media (min-width: 500px) {
+    @include min-tablet-small {
       svg {
         width: 200px;
       }

@@ -5,6 +5,8 @@ mixin team()
         .section__top.section__top--centered
           h2.team__title Наши панки
         .section__body
+          .team__contact
+            a.button(href="contacts.html?contact=Сотрудничать") Сотрудничать
           .slider.team__slider.swiper(data-slider, data-type="team")
             ul.swiper-wrapper.slider__wrapper
               each item in teamItems

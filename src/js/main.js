@@ -1,6 +1,7 @@
 import { initForm } from '../components';
 import { initTogglers } from '../components';
 import { blockReveal } from './modules/block-reveal';
+import { initFormParams } from './modules/form-params';
 import { initFilter } from './modules/init-filter';
 import { initLightgallery } from './modules/init-lightgallery';
 import { initPage } from './modules/init-page';
@@ -16,4 +17,5 @@ document.addEventListener('DOMContentLoaded', () => {
   blockReveal();
   initFilter();
   initForm();
+  initFormParams();
 });

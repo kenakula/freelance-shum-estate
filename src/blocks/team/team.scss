@@ -3,6 +3,20 @@
 
   overflow-x: hidden;
 
+  &__contact {
+    margin-bottom: 20px;
+
+    .button {
+      text-align: center;
+      text-transform: uppercase;
+    }
+
+    @include min-laptop {
+      display: flex;
+      justify-content: flex-end;
+    }
+  }
+
   &__title {
     margin: 0;
   }

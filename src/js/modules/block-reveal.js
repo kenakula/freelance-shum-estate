@@ -7,7 +7,7 @@ export const blockReveal = () => {
 
   const options = {
     rootMargin: '0px',
-    threshold: 0.4,
+    threshold: 0.2,
   };
 
   const callback = function (entries, observer) {

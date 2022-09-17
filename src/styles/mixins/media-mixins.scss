@@ -10,6 +10,12 @@
   }
 }
 
+@mixin min-tablet-small {
+  @media (min-width: $tablet-small) {
+    @content;
+  }
+}
+
 @mixin min-laptop {
   @media (min-width: $laptop) {
     @content;
