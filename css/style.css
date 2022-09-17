@@ -2510,6 +2510,15 @@ h2 {
   margin: 0;
   width: 50%;
 }
+.wpcf7-radio .wpcf7-list-item input[type=radio] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
 .wpcf7-radio .wpcf7-list-item-label {
   font-size: 1.0625rem;
   line-height: 1.25rem;
