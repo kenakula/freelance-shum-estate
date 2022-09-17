@@ -1347,7 +1347,7 @@ var blockReveal = function blockReveal() {
 
   var options = {
     rootMargin: '0px',
-    threshold: 0.4
+    threshold: 0.2
   };
 
   var callback = function callback(entries, observer) {
@@ -1364,6 +1364,30 @@ var blockReveal = function blockReveal() {
   blocks.forEach(function (block) {
     observer.observe(block);
   });
+};
+;// CONCATENATED MODULE: ./js/modules/form-params.js
+var initFormParams = function initFormParams() {
+  var FORM_PARAM = 'contact';
+  var queryString = window.location.search;
+  var urlParams = new URLSearchParams(queryString);
+  var form = document.querySelector('[data-form]');
+  var mailInput = document.getElementById('mail');
+
+  if (!urlParams.has(FORM_PARAM) || !form || !mailInput) {
+    return;
+  }
+
+  var formRadios = form['radio-option'];
+  var paramValue = urlParams.get(FORM_PARAM);
+  mailInput.focus();
+
+  if (formRadios.length) {
+    formRadios.forEach(function (radio) {
+      if (radio.value === paramValue) {
+        radio.checked = true;
+      }
+    });
+  }
 };
 ;// CONCATENATED MODULE: ./js/modules/init-filter.js
 var initFilter = function initFilter() {
@@ -12574,6 +12598,7 @@ var initScrollTo = function initScrollTo() {
 
 
 
+
 document.addEventListener('DOMContentLoaded', function () {
   initPage();
   initScrollTo();
@@ -12583,6 +12608,7 @@ document.addEventListener('DOMContentLoaded', function () {
   blockReveal();
   initFilter();
   initForm();
+  initFormParams();
 });
 }();
 /******/ })()
