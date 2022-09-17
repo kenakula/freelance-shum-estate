@@ -160,6 +160,10 @@
   .wpcf7-list-item {
     margin: 0;
     width: 50%;
+
+    input[type="radio"] {
+      @include visually-hidden;
+    }
   }
 
   .wpcf7-list-item-label {
